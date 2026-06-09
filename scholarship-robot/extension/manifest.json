@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Scholarship Robot Autofill",
+  "version": "1.0.0",
+  "description": "Fills verified scholarship application profile fields and pauses before submit.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Scholarship Robot Autofill"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
