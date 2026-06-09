@@ -1,0 +1,130 @@
+window.SCHOLARSHIP_ROBOT_DATA = {
+  applicant: {
+    name: "Kieron Christopher Haynes",
+    email: "Stored in private local profile",
+    mailingCityStateZip: "New Orleans, Louisiana",
+    currentDegreeForApplications: "MS Computer Science, University of New Orleans, expected May 2027",
+    completedGraduateDegree: "MS Engineering Management, University of New Orleans, May 2025",
+    education: [
+      "BA Computer Information Systems, Southern University at New Orleans, May 2024",
+      "MS Engineering Management, University of New Orleans, May 2025",
+      "MS Computer Science, University of New Orleans, expected May 2027"
+    ],
+    verifiedResumeHighlights: [
+      "Data analytics, client services, editorial leadership, and public-sector technology experience",
+      "Entrepreneurship, filmmaking, and community leadership"
+    ],
+    verifiedSkills: [
+      "Excel automation, SQL, Power BI, dashboards, and reporting",
+      "SharePoint, Power Automate, Microsoft Graph concepts, and cloud workflow design",
+      "Python, Java, JavaScript, HTML, CSS, REST APIs, and systems administration"
+    ],
+    missingSubmissionFields: [
+      "Platform account credentials",
+      "Applicant signatures and certifications",
+      "Recommendation letters and recommender approvals"
+    ],
+    portfolioUrl: "https://kieronhaynes38-king.github.io/Kieron-s-portfolio/",
+    youtubeUrl: "https://www.youtube.com/@kieroncH"
+  },
+  submissionAttempts: [],
+  statuses: ["prospect", "verified", "drafted", "ready_for_review", "filled_pause", "submitted_by_user", "not_eligible", "monitor_next_cycle"],
+  scholarships: [
+    {
+      id: "asem-grad",
+      name: "ASEM Undergraduate and Graduate Student Scholarships",
+      sponsor: "American Society for Engineering Management",
+      category: "Engineering Management",
+      url: "https://asem.org/ASEM-Scholarships",
+      amount: "Varies",
+      deadline: "2026-07-15",
+      applicationMethod: "email",
+      status: "prospect",
+      matchScore: 94,
+      aiPolicy: "unknown",
+      sensitiveTags: ["membership"],
+      eligibility: "Engineering management students meeting sponsor membership, enrollment, GPA, and graduation requirements.",
+      materials: "Application form, transcript, essay, recommendation, and applicant certification.",
+      matchReasons: ["Engineering management degree", "Graduate GPA", "Leadership experience"],
+      risks: ["Membership and recommendation required", "AI policy must be verified"],
+      nextAction: "Verify current membership, deadline, and application instructions.",
+      contactEmail: "scholarship@asem.org"
+    },
+    {
+      id: "uno-engineering",
+      name: "UNO College of Engineering Scholarships",
+      sponsor: "University of New Orleans",
+      category: "University / Engineering",
+      url: "https://www.uno.edu/academics/coe/scholarships",
+      amount: "Varies",
+      deadline: "Verify current cycle",
+      applicationMethod: "internal",
+      status: "verified",
+      matchScore: 92,
+      aiPolicy: "not_applicable",
+      sensitiveTags: [],
+      eligibility: "UNO engineering students; award-specific GPA, enrollment, leadership, and department requirements vary.",
+      materials: "Internal application, resume, transcript, and department materials.",
+      matchReasons: ["UNO graduate student", "Engineering management background", "Strong GPA and leadership"],
+      risks: ["Current CS enrollment may affect department eligibility"],
+      nextAction: "Confirm eligible graduate awards with UNO financial aid and the College of Engineering."
+    },
+    {
+      id: "sbb-stem",
+      name: "SBB Research Group Foundation STEM Scholarship",
+      sponsor: "SBB Research Group Foundation",
+      category: "STEM",
+      url: "https://www.sbbscholarship.com/",
+      amount: "Varies",
+      deadline: "Quarterly",
+      applicationMethod: "online",
+      status: "verified",
+      matchScore: 90,
+      aiPolicy: "restricted",
+      sensitiveTags: [],
+      eligibility: "Students pursuing eligible STEM study with sponsor-defined academic requirements.",
+      materials: "Online application and applicant-authored essay.",
+      matchReasons: ["Computer science graduate study", "Data and AI experience", "Graduate GPA"],
+      risks: ["Final writing must be applicant-authored", "Current deadline must be verified"],
+      nextAction: "Use the robot for facts and outlining only; write the final essay personally."
+    },
+    {
+      id: "nsbe-scholarships",
+      name: "NSBE Scholarships",
+      sponsor: "National Society of Black Engineers",
+      category: "Professional Society / STEM",
+      url: "https://nsbe.org/scholarships/",
+      amount: "Varies",
+      deadline: "Verify current cycle",
+      applicationMethod: "portal",
+      status: "prospect",
+      matchScore: 86,
+      aiPolicy: "unknown",
+      sensitiveTags: ["identity", "membership"],
+      eligibility: "Scholarship-specific membership, identity, GPA, enrollment, and discipline requirements.",
+      materials: "Portal profile, GPA verification, resume, transcript, essays, and award-specific materials.",
+      matchReasons: ["Engineering and computer science background", "Leadership", "Strong GPA"],
+      risks: ["Sensitive eligibility and membership must be privately confirmed", "AI policy varies"],
+      nextAction: "Confirm eligibility privately and review currently open portal awards."
+    },
+    {
+      id: "afcea-stem",
+      name: "AFCEA Educational Foundation Scholarships",
+      sponsor: "AFCEA Educational Foundation",
+      category: "Computer Science / Cyber",
+      url: "https://www.afcea.org/education/scholarships",
+      amount: "Varies",
+      deadline: "Verify current cycle",
+      applicationMethod: "online",
+      status: "prospect",
+      matchScore: 84,
+      aiPolicy: "unknown",
+      sensitiveTags: [],
+      eligibility: "Award-specific computer science, cybersecurity, engineering, enrollment, and GPA rules.",
+      materials: "Online application, transcript, resume, essay, and recommendations as required.",
+      matchReasons: ["Computer science graduate study", "IT operations and public-sector data work", "Technical portfolio"],
+      risks: ["Some awards target narrower fields or populations", "Current cycle must be verified"],
+      nextAction: "Filter current AFCEA awards for graduate computer science eligibility."
+    }
+  ]
+};
