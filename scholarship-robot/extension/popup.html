@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scholarship Robot Autofill</title>
+    <style>
+      body {
+        width: 330px;
+        margin: 0;
+        padding: 16px;
+        color: #182033;
+        background: #f7f8fb;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 1.15rem;
+      }
+      p {
+        margin: 0 0 12px;
+        color: #647087;
+        line-height: 1.4;
+      }
+      .panel {
+        border: 1px solid #d9dfeb;
+        border-radius: 6px;
+        background: #fff;
+        padding: 12px;
+      }
+      .actions {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      button,
+      label {
+        display: flex;
+        min-height: 38px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d9dfeb;
+        border-radius: 6px;
+        padding: 0 10px;
+        background: #fff;
+        color: #182033;
+        cursor: pointer;
+        font: inherit;
+      }
+      button.primary {
+        border-color: #0d6a62;
+        background: #0d6a62;
+        color: #fff;
+      }
+      input[type="file"] {
+        display: none;
+      }
+      #status {
+        min-height: 38px;
+        margin-top: 10px;
+        border-left: 4px solid #304d8a;
+        background: #eef2f8;
+        padding: 8px 10px;
+        color: #36435a;
+        line-height: 1.35;
+      }
+      .warning {
+        margin-top: 10px;
+        color: #75170f;
+        font-size: 0.78rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Scholarship Robot Autofill</h1>
+    <p>Import the private profile once, then fill verified fields on the current scholarship page.</p>
+    <div class="panel">
+      <strong id="profileName">No profile loaded</strong>
+      <div class="actions">
+        <label>
+          Import private-profile.json
+          <input id="profileFile" type="file" accept=".json,application/json" />
+        </label>
+        <button id="fillPage" class="primary" type="button">Fill Current Page</button>
+        <button id="clearProfile" type="button">Clear Stored Profile</button>
+      </div>
+      <div id="status">Waiting for a profile.</div>
+      <div class="warning">Never fills passwords, SSNs, banking, tax, FSA, signatures, consent boxes, or final submit.</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
