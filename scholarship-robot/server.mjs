@@ -191,7 +191,13 @@ async function handleApi(request, response, url) {
 async function serveStatic(response, pathname) {
   const decoded = decodeURIComponent(pathname);
   const relative = decoded === "/" ? "index.html" : decoded.replace(/^\/+/, "");
-  const publicFiles = new Set(["index.html", "app.js", "data.js", "styles.css"]);
+  const publicFiles = new Set([
+    "index.html",
+    "app.js",
+    "data.js",
+    "scholarship-library.js",
+    "styles.css"
+  ]);
   if (!publicFiles.has(relative.replace(/\\/g, "/"))) {
     sendText(response, 404, "Not found");
     return;
