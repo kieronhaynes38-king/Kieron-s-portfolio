@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A private-by-design job search CRM with 500 ranked remote and New Orleans opportunities." />
+    <title>Job Application Robot</title>
+    <link rel="stylesheet" href="./styles.css?v=20260615-2" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Kieron Haynes Career Workspace</p>
+        <h1>Job Application Robot</h1>
+        <p class="header-meta">
+          <span id="verificationDate">Current listings</span>
+          <span>New Orleans + USA remote</span>
+        </p>
+      </div>
+      <div class="header-actions">
+        <a class="button secondary" href="../" aria-label="Open portfolio">Portfolio</a>
+        <button id="exportFiltered" class="button secondary" type="button">Export View</button>
+        <button id="exportTracker" class="button primary" type="button">Export Tracker</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="stats" class="stats-grid" aria-label="Job totals"></section>
+
+      <section class="profile-band" aria-labelledby="profileHeading">
+        <div class="profile-heading">
+          <div>
+            <p class="eyebrow">Candidate Profile</p>
+            <h2 id="profileHeading">Data, systems, operations, and creative technology</h2>
+          </div>
+          <a id="portfolioLink" class="button secondary" target="_blank" rel="noreferrer">Open Work</a>
+        </div>
+        <div class="profile-grid">
+          <div>
+            <span class="label">Education</span>
+            <p id="educationSummary"></p>
+          </div>
+          <div>
+            <span class="label">Target Market</span>
+            <p>Analytics, IT systems, cloud operations, implementation, project delivery, customer support, software, QA, business systems, and digital operations.</p>
+          </div>
+          <div>
+            <span class="label">Location Rule</span>
+            <p>In-person listings are New Orleans only. Remote listings must indicate U.S., USA, North America, or worldwide eligibility.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Job filters">
+        <label class="search-field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="SQL, analyst, support, project, company..." />
+        </label>
+        <label>
+          <span>Work mode</span>
+          <select id="modeFilter">
+            <option value="all">All modes</option>
+            <option value="Remote">Remote USA</option>
+            <option value="New Orleans">New Orleans</option>
+          </select>
+        </label>
+        <label>
+          <span>Role family</span>
+          <select id="familyFilter"></select>
+        </label>
+        <label>
+          <span>Fit</span>
+          <select id="fitFilter">
+            <option value="all">All fit bands</option>
+            <option value="Strong">Strong</option>
+            <option value="Good">Good</option>
+            <option value="Possible">Possible</option>
+            <option value="Stretch">Stretch</option>
+          </select>
+        </label>
+        <label>
+          <span>Status</span>
+          <select id="statusFilter"></select>
+        </label>
+        <label>
+          <span>Sort</span>
+          <select id="sortFilter">
+            <option value="fit">Best fit</option>
+            <option value="recent">Most recent</option>
+            <option value="company">Company</option>
+            <option value="title">Job title</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="workspace">
+        <div class="results-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Application Queue</p>
+              <h2 id="resultCount">500 jobs</h2>
+            </div>
+            <label class="toggle-line">
+              <input id="savedOnly" type="checkbox" />
+              <span>Saved only</span>
+            </label>
+          </div>
+          <div id="jobResults" class="job-results"></div>
+          <div class="pagination">
+            <button id="previousPage" class="button secondary" type="button">Previous</button>
+            <span id="pageLabel" class="page-label"></span>
+            <button id="nextPage" class="button secondary" type="button">Next</button>
+          </div>
+        </div>
+
+        <aside id="jobDetail" class="detail-panel" aria-live="polite">
+          <p class="empty-state">Select a job to open its application packet.</p>
+        </aside>
+      </section>
+
+      <section class="source-section" aria-labelledby="sourceHeading">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Live Sources</p>
+            <h2 id="sourceHeading">Collection report</h2>
+          </div>
+          <span id="sourceTotal" class="page-label"></span>
+        </div>
+        <div id="sourceCards" class="source-grid"></div>
+      </section>
+    </main>
+
+    <template id="detailTemplate">
+      <div class="detail-header">
+        <div>
+          <div class="detail-kicker">
+            <span data-field="fit"></span>
+            <span data-field="mode"></span>
+          </div>
+          <h2 data-field="title"></h2>
+          <p class="company-line" data-field="company"></p>
+        </div>
+        <div class="score-box">
+          <strong data-field="score"></strong>
+          <span>Fit</span>
+        </div>
+      </div>
+
+      <div class="detail-actions">
+        <a class="button primary" data-field="applyUrl" target="_blank" rel="noreferrer">Open Application</a>
+        <button class="button secondary" data-action="save" type="button">Save Job</button>
+        <button class="button secondary" data-action="copy-link" type="button">Copy Link</button>
+      </div>
+
+      <dl class="fact-grid"></dl>
+
+      <div class="detail-columns">
+        <section>
+          <h3>Why It Fits</h3>
+          <ul data-field="reasons"></ul>
+        </section>
+        <section>
+          <h3>Verify Before Applying</h3>
+          <ul data-field="gaps"></ul>
+        </section>
+      </div>
+
+      <section class="description-block">
+        <h3>Listing Snapshot</h3>
+        <p data-field="description"></p>
+      </section>
+
+      <div class="tab-bar" role="tablist" aria-label="Application packet">
+        <button class="tab-button active" data-tab="letter" type="button">Cover Letter</button>
+        <button class="tab-button" data-tab="answers" type="button">Application Answers</button>
+        <button class="tab-button" data-tab="notes" type="button">Tracker Notes</button>
+      </div>
+
+      <section class="tab-panel active" data-panel="letter">
+        <div class="editor-heading">
+          <div>
+            <h3>Personalized Cover Letter</h3>
+            <span data-field="wordCount"></span>
+          </div>
+          <div>
+            <button class="button secondary" data-action="reset-letter" type="button">Reset</button>
+            <button class="button secondary" data-action="download-letter" type="button">Download</button>
+            <button class="button primary" data-action="copy-letter" type="button">Copy</button>
+          </div>
+        </div>
+        <textarea data-field="coverLetter" rows="24"></textarea>
+      </section>
+
+      <section class="tab-panel" data-panel="answers">
+        <div data-field="answers" class="answers-grid"></div>
+      </section>
+
+      <section class="tab-panel" data-panel="notes">
+        <div class="tracker-grid">
+          <label>
+            <span>Application status</span>
+            <select data-field="status"></select>
+          </label>
+          <label>
+            <span>Follow-up date</span>
+            <input data-field="followUp" type="date" />
+          </label>
+          <label class="wide">
+            <span>Notes</span>
+            <textarea data-field="notes" rows="8" placeholder="Contacts, application questions, interview details, and next steps."></textarea>
+          </label>
+        </div>
+      </section>
+    </template>
+
+    <script src="./jobs-data.js?v=20260615-2"></script>
+    <script src="./app.js?v=20260615-2"></script>
+  </body>
+</html>
