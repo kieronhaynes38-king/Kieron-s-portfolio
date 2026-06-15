@@ -7,6 +7,9 @@ const port = Number(process.env.PORT || 4174);
 const host = process.env.HOST || "127.0.0.1";
 const publicFiles = new Set([
   "index.html",
+  "learning-guide.html",
+  "learning-guide.css",
+  "learning-guide.js",
   "styles.css",
   "app.js",
   "jobs-data.js",

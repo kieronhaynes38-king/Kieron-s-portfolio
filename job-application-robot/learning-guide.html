@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple, detailed guide to the HTML, CSS, JavaScript, data collection, server, and tests inside the Job Application Robot." />
+    <title>Learn the Job Robot Code</title>
+    <link rel="stylesheet" href="./learning-guide.css?v=20260615-1" />
+  </head>
+  <body>
+    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+    <header class="guide-header">
+      <div>
+        <p class="eyebrow">Kieron's Beginner Coding Course</p>
+        <h1>Learn Every Part of the Job Application Robot</h1>
+        <p>This guide treats you like a new programmer, not like someone who is supposed to know hidden vocabulary. Read it slowly, type the small examples yourself, break them, and repair them.</p>
+      </div>
+      <div class="header-actions">
+        <a class="button" href="./">Open Robot</a>
+        <a class="button" href="https://github.com/kieronhaynes38-king/Kieron-s-portfolio/tree/main/job-application-robot" target="_blank" rel="noreferrer">Open GitHub Code</a>
+      </div>
+    </header>
+
+    <div class="guide-layout">
+      <aside class="guide-nav">
+        <header>
+          <strong>Your progress</strong>
+          <span id="progressText">0% read</span>
+          <span id="completedCount">0 chapters completed</span>
+        </header>
+        <nav aria-label="Guide chapters">
+          <a data-chapter-link href="#chapter-1">1. How websites think</a>
+          <a data-chapter-link href="#chapter-2">2. Project files</a>
+          <a data-chapter-link href="#chapter-3">3. Code punctuation</a>
+          <a data-chapter-link href="#chapter-4">4. HTML skeleton</a>
+          <a data-chapter-link href="#chapter-5">5. CSS appearance</a>
+          <a data-chapter-link href="#chapter-6">6. Responsive design</a>
+          <a data-chapter-link href="#chapter-7">7. JavaScript basics</a>
+          <a data-chapter-link href="#chapter-8">8. Data and objects</a>
+          <a data-chapter-link href="#chapter-9">9. Search and filters</a>
+          <a data-chapter-link href="#chapter-10">10. Rendering jobs</a>
+          <a data-chapter-link href="#chapter-11">11. Clicks and saving</a>
+          <a data-chapter-link href="#chapter-12">12. Job collector</a>
+          <a data-chapter-link href="#chapter-13">13. Matching and letters</a>
+          <a data-chapter-link href="#chapter-14">14. Server and tests</a>
+          <a data-chapter-link href="#chapter-15">15. VS Code workflow</a>
+          <a data-chapter-link href="#chapter-16">16. Build your own app</a>
+        </nav>
+      </aside>
+
+      <main class="guide-content">
+        <section class="welcome">
+          <p class="eyebrow">Start Here</p>
+          <h2>You do not need to memorize everything</h2>
+          <p>Programming is mostly learning how to divide a large idea into small instructions. The computer is extremely literal. It does not guess what you meant. Your job is to give it small, organized steps.</p>
+          <div class="mental-model">
+            <div><strong>HTML = skeleton</strong><span>What exists on the page.</span></div>
+            <div><strong>CSS = clothing</strong><span>How everything looks and fits.</span></div>
+            <div><strong>JavaScript = brain</strong><span>What happens when people interact.</span></div>
+            <div><strong>Data = memory</strong><span>The jobs, scores, links, and letters.</span></div>
+            <div><strong>Collector = researcher</strong><span>Finds and organizes new jobs.</span></div>
+            <div><strong>Tests = inspector</strong><span>Checks that promises remain true.</span></div>
+          </div>
+        </section>
+
+        <section id="chapter-1" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">1</span>
+              <div><h2>How a Website Thinks</h2><p>The browser reads files in an order and builds the page.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-1" type="button">Mark Complete</button>
+          </div>
+          <p>When someone visits the robot, the browser first opens <code>index.html</code>. The HTML tells it to load the CSS, the job data, and the JavaScript.</p>
+          <div class="code-example">
+            <div class="code-toolbar"><span>index.html: the loading order</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>&lt;link rel="stylesheet" href="./styles.css" /&gt;
+
+&lt;script src="./jobs-data.js"&gt;&lt;/script&gt;
+&lt;script src="./app.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+          <dl class="line-explanation">
+            <dt>&lt;link ...&gt;</dt><dd>Loads the CSS before the page is shown, so the page has its design.</dd>
+            <dt>jobs-data.js</dt><dd>Loads the job information first. The brain needs this memory.</dd>
+            <dt>app.js</dt><dd>Loads the behavior second. Now JavaScript can use the job information.</dd>
+          </dl>
+          <div class="plain-box"><strong>The big rule</strong>If one file needs information from another file, load the information first. Order matters.</div>
+          <div class="practice"><strong>Practice</strong>Create three empty files named <code>practice.html</code>, <code>practice.css</code>, and <code>practice.js</code>. Link the CSS near the top of the HTML and the JavaScript near the bottom.</div>
+        </section>
+
+        <section id="chapter-2" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">2</span>
+              <div><h2>The Project Files</h2><p>Each file has one main job.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-2" type="button">Mark Complete</button>
+          </div>
+          <div class="file-map">job-application-robot/
+|-- index.html                 Main robot page
+|-- styles.css                Main robot design
+|-- app.js                    Main robot behavior
+|-- jobs-data.js              500 jobs and letters
+|-- learning-guide.html       This course
+|-- learning-guide.css        This course's design
+|-- learning-guide.js         Course progress and copy buttons
+|-- server.mjs                Local web server
+|-- 500_jobs.csv              Spreadsheet version
+|-- collection-report.json    Collection totals
+|-- scripts/
+|   `-- collect-jobs.mjs      Finds, scores, and saves jobs
+`-- tests/
+    `-- validate-data.mjs     Checks the finished dataset</div>
+          <p>Good projects separate responsibilities. If every language and every feature were placed in one enormous file, finding a mistake would be much harder.</p>
+          <div class="plain-box"><strong>How to choose a file</strong>Changing words or page structure? Open HTML. Changing color, spacing, or phone layout? Open CSS. Changing behavior? Open JavaScript. Changing jobs or matching rules? Open the collector.</div>
+        </section>
+
+        <section id="chapter-3" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">3</span>
+              <div><h2>Code Punctuation</h2><p>Symbols are instructions, not decoration.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-3" type="button">Mark Complete</button>
+          </div>
+          <div class="symbol-grid">
+            <div><code>{ }</code><strong>Curly braces</strong><span>Hold a group of instructions or an object.</span></div>
+            <div><code>( )</code><strong>Parentheses</strong><span>Pass information into a function or control a condition.</span></div>
+            <div><code>[ ]</code><strong>Square brackets</strong><span>Hold a list called an array.</span></div>
+            <div><code>" "</code><strong>Quotes</strong><span>Hold text called a string.</span></div>
+            <div><code>=</code><strong>Assignment</strong><span>Puts a value into a named container.</span></div>
+            <div><code>===</code><strong>Exact comparison</strong><span>Asks whether two values are equal.</span></div>
+            <div><code>.</code><strong>Dot</strong><span>Opens a property or tool belonging to something.</span></div>
+            <div><code>;</code><strong>Semicolon</strong><span>Marks the end of a JavaScript instruction.</span></div>
+            <div><code>=&gt;</code><strong>Arrow</strong><span>A short way to write a function.</span></div>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>A small JavaScript object</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const student = {
+  name: "Kieron",
+  skills: ["Python", "JavaScript"],
+  isLearning: true
+};
+
+console.log(student.name);</code></pre>
+          </div>
+          <p><code>student</code> is the container. The curly braces hold related facts. <code>student.name</code> means, “Open student and give me its name.”</p>
+          <div class="warning"><strong>Most beginner errors are tiny</strong>A missing quote, bracket, comma, or brace can stop a file. Read error messages from the first reported error, because later errors may be caused by the first one.</div>
+        </section>
+
+        <section id="chapter-4" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">4</span>
+              <div><h2>HTML: The Skeleton</h2><p>HTML says what each piece of content is.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-4" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>A complete tiny webpage</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;title&gt;My First App&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;My First App&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h2&gt;My Projects&lt;/h2&gt;
+        &lt;button id="helloButton" type="button"&gt;Say Hello&lt;/button&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;script src="./app.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+          <dl class="line-explanation">
+            <dt>&lt;head&gt;</dt><dd>Information for the browser: title, character rules, phone sizing, and CSS.</dd>
+            <dt>&lt;body&gt;</dt><dd>Everything the person can see or interact with.</dd>
+            <dt>&lt;header&gt;</dt><dd>The top identity area of the page.</dd>
+            <dt>&lt;main&gt;</dt><dd>The primary content. Most pages should have one main element.</dd>
+            <dt>&lt;section&gt;</dt><dd>A meaningful group of related content.</dd>
+            <dt>id="helloButton"</dt><dd>A unique name JavaScript can use to find this exact button.</dd>
+          </dl>
+          <h3>The robot's reusable template</h3>
+          <p>The job detail panel uses an HTML <code>&lt;template&gt;</code>. A template is a hidden blueprint. JavaScript copies it whenever a job is selected.</p>
+          <div class="code-example">
+            <div class="code-toolbar"><span>index.html: hidden blueprint</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>&lt;template id="detailTemplate"&gt;
+  &lt;h2 data-field="title"&gt;&lt;/h2&gt;
+  &lt;p data-field="company"&gt;&lt;/p&gt;
+  &lt;a data-field="applyUrl"&gt;Open Application&lt;/a&gt;
+&lt;/template&gt;</code></pre>
+          </div>
+          <div class="plain-box"><strong>Why data-field?</strong><code>data-field</code> is a custom label. It gives JavaScript a stable place to insert a title, company, or link.</div>
+          <div class="practice"><strong>Practice</strong>Add a paragraph beneath the button in your tiny page. Give it <code>id="message"</code>. Leave it empty so JavaScript can fill it later.</div>
+        </section>
+
+        <section id="chapter-5" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">5</span>
+              <div><h2>CSS: Appearance and Layout</h2><p>CSS selects HTML and gives it visual rules.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-5" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>styles.css: reusable design values</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>:root {
+  --ink: #17202a;
+  --surface: #ffffff;
+  --green: #126b5f;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.button {
+  border-radius: 6px;
+  padding: 10px 14px;
+  background: var(--green);
+  color: white;
+}</code></pre>
+          </div>
+          <dl class="line-explanation">
+            <dt>:root</dt><dd>The highest level. We place reusable design variables here.</dd>
+            <dt>--green</dt><dd>A custom variable. Change it once and every <code>var(--green)</code> changes.</dd>
+            <dt>body</dt><dd>Selects the whole visible page.</dd>
+            <dt>.button</dt><dd>A period means “select every element with class button.”</dd>
+            <dt>property: value;</dt><dd>The basic CSS sentence. Example: <code>color: white;</code>.</dd>
+          </dl>
+          <h3>Grid creates columns</h3>
+          <div class="code-example">
+            <div class="code-toolbar"><span>styles.css: robot workspace</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>.workspace {
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 14px;
+}</code></pre>
+          </div>
+          <p>This creates two columns. The first is 420 pixels wide. The second takes the remaining space. The gap places 14 pixels between them.</p>
+          <div class="practice"><strong>Practice</strong>Make three boxes. Put them inside a parent with <code>display: grid</code> and <code>grid-template-columns: repeat(3, 1fr)</code>.</div>
+        </section>
+
+        <section id="chapter-6" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">6</span>
+              <div><h2>Responsive Design</h2><p>The same page must rearrange itself for smaller screens.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-6" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>styles.css: phone breakpoint</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>@media (max-width: 820px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+          </div>
+          <p><code>@media</code> means, “Only use these rules when this condition is true.” At 820 pixels or narrower, the two-column workspace becomes one column. At 560 pixels or narrower, every filter gets its own row.</p>
+          <div class="plain-box"><strong>Responsive thinking</strong>Do not build a separate phone website. Build one flexible website whose layout changes at sensible widths.</div>
+          <div class="practice"><strong>Practice</strong>Give a heading a desktop font size of <code>40px</code>. Inside a media query, change it to <code>28px</code>.</div>
+        </section>
+
+        <section id="chapter-7" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">7</span>
+              <div><h2>JavaScript: The Brain</h2><p>Variables remember. Functions perform jobs. Conditions make decisions.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-7" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>JavaScript fundamentals</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const name = "Kieron";
+let score = 80;
+
+function addPoints(points) {
+  score = score + points;
+  return score;
+}
+
+if (score &gt;= 82) {
+  console.log(`${name} has a strong match.`);
+}</code></pre>
+          </div>
+          <dl class="line-explanation">
+            <dt>const</dt><dd>Creates a name that will not be assigned a completely new value.</dd>
+            <dt>let</dt><dd>Creates a name whose value may change.</dd>
+            <dt>function</dt><dd>Creates a reusable group of instructions.</dd>
+            <dt>points</dt><dd>A parameter: information given to the function.</dd>
+            <dt>return</dt><dd>Sends a result back to the code that called the function.</dd>
+            <dt>if</dt><dd>Runs code only when a condition is true.</dd>
+            <dt>${name}</dt><dd>Inserts a value inside a template string made with backticks.</dd>
+          </dl>
+          <h3>Connecting JavaScript to HTML</h3>
+          <div class="code-example">
+            <div class="code-toolbar"><span>practice.js</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const button = document.getElementById("helloButton");
+const message = document.getElementById("message");
+
+button.addEventListener("click", function () {
+  message.textContent = "Hello, Kieron!";
+});</code></pre>
+          </div>
+          <p>The browser's page is called <code>document</code>. We find two HTML elements by their IDs. Then we listen for a click and change the paragraph's text.</p>
+        </section>
+
+        <section id="chapter-8" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">8</span>
+              <div><h2>Data, Arrays, and Objects</h2><p>The robot stores many job objects inside one jobs array.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-8" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>A simplified job dataset</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const data = {
+  applicant: {
+    name: "Kieron Christopher Haynes",
+    location: "New Orleans, Louisiana"
+  },
+  jobs: [
+    {
+      id: "job-1",
+      title: "Data Analyst",
+      company: "Example Company",
+      score: 92,
+      workMode: "Remote"
+    }
+  ]
+};</code></pre>
+          </div>
+          <p>An object uses named properties. An array uses numbered positions. Here, <code>data.jobs</code> opens the array. <code>data.jobs[0]</code> opens the first job because counting begins at zero.</p>
+          <div class="code-example">
+            <div class="code-toolbar"><span>Reading the data</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>console.log(data.applicant.name);
+console.log(data.jobs[0].title);
+
+data.jobs.forEach((job) =&gt; {
+  console.log(job.company);
+});</code></pre>
+          </div>
+          <div class="plain-box"><strong>Read the dots aloud</strong><code>data.jobs[0].title</code> means: open data, open jobs, open the first item, give me its title.</div>
+        </section>
+
+        <section id="chapter-9" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">9</span>
+              <div><h2>Search and Filters</h2><p>Filtering asks every job a yes-or-no question.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-9" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>app.js: simplified filter</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>function filteredJobs() {
+  const query = searchInput.value.trim().toLowerCase();
+
+  return data.jobs.filter((job) =&gt; {
+    const searchableText = [
+      job.title,
+      job.company,
+      job.location
+    ].join(" ").toLowerCase();
+
+    if (query &amp;&amp; !searchableText.includes(query)) {
+      return false;
+    }
+
+    return true;
+  });
+}</code></pre>
+          </div>
+          <p><code>filter</code> visits each job. Returning <code>true</code> keeps the job. Returning <code>false</code> removes it from the displayed list. The original dataset remains unchanged.</p>
+          <dl class="line-explanation">
+            <dt>trim()</dt><dd>Removes extra spaces at the beginning and end.</dd>
+            <dt>toLowerCase()</dt><dd>Makes capitalization irrelevant.</dd>
+            <dt>join(" ")</dt><dd>Combines several pieces of text into one searchable sentence.</dd>
+            <dt>includes(query)</dt><dd>Checks whether the search text appears inside the sentence.</dd>
+            <dt>!</dt><dd>Means “not.” It reverses true and false.</dd>
+          </dl>
+          <div class="practice"><strong>Practice</strong>Create three sample products and filter them by category. Then add a search term.</div>
+        </section>
+
+        <section id="chapter-10" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">10</span>
+              <div><h2>Rendering Jobs on the Page</h2><p>Rendering means turning data into visible HTML.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-10" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>app.js: data becomes job buttons</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>jobResults.innerHTML = jobs.map((job) =&gt; {
+  return `
+    &lt;button class="job-result" data-job-id="${job.id}"&gt;
+      &lt;strong&gt;${job.title}&lt;/strong&gt;
+      &lt;span&gt;${job.company}&lt;/span&gt;
+      &lt;span&gt;${job.score}&lt;/span&gt;
+    &lt;/button&gt;
+  `;
+}).join("");</code></pre>
+          </div>
+          <p><code>map</code> transforms each job into an HTML string. <code>join("")</code> combines all those strings. <code>innerHTML</code> places the finished result inside the page.</p>
+          <div class="warning"><strong>Security rule</strong>When text comes from outside your own code, escape it before placing it into <code>innerHTML</code>. The robot uses <code>escapeHtml()</code> to prevent text from becoming executable HTML.</div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>app.js: safe text</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>function escapeHtml(value) {
+  return String(value)
+    .replace(/&amp;/g, "&amp;amp;")
+    .replace(/&lt;/g, "&amp;lt;")
+    .replace(/&gt;/g, "&amp;gt;")
+    .replace(/"/g, "&amp;quot;");
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="chapter-11" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">11</span>
+              <div><h2>Clicks, State, and Browser Storage</h2><p>State is the information that changes while the app is being used.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-11" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>app.js: selecting a job</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>button.addEventListener("click", () =&gt; {
+  selectedId = button.dataset.jobId;
+  renderResults();
+  renderDetail();
+});</code></pre>
+          </div>
+          <p>The click updates <code>selectedId</code>. Then the list and detail panel render again. The new state creates a new view.</p>
+          <h3>Saving information after refresh</h3>
+          <div class="code-example">
+            <div class="code-toolbar"><span>app.js: localStorage</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const storageKey = "jobApplicationRobotState.v1";
+
+function saveState() {
+  localStorage.setItem(
+    storageKey,
+    JSON.stringify(state)
+  );
+}
+
+function loadState() {
+  const savedText = localStorage.getItem(storageKey);
+  return savedText ? JSON.parse(savedText) : {};
+}</code></pre>
+          </div>
+          <p><code>localStorage</code> is a small notebook inside the browser. It only stores text. <code>JSON.stringify</code> turns an object into text. <code>JSON.parse</code> turns the text back into an object.</p>
+          <div class="warning"><strong>Privacy warning</strong>Local storage is convenient, not a vault. Never store passwords, Social Security numbers, banking information, or secret API keys there.</div>
+        </section>
+
+        <section id="chapter-12" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">12</span>
+              <div><h2>The Job Collector</h2><p>This Node.js script asks public job sources for current listings.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-12" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>collect-jobs.mjs: request JSON</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>async function fetchJson(url) {
+  const response = await fetch(url, {
+    headers: {
+      Accept: "application/json"
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`Request failed: ${response.status}`);
+  }
+
+  return response.json();
+}</code></pre>
+          </div>
+          <dl class="line-explanation">
+            <dt>async</dt><dd>This function must wait for work that takes time.</dd>
+            <dt>await</dt><dd>Pause this function until the internet response arrives.</dd>
+            <dt>fetch(url)</dt><dd>Ask a web address for information.</dd>
+            <dt>response.ok</dt><dd>Whether the request succeeded.</dd>
+            <dt>throw new Error</dt><dd>Stop this path and report a useful problem.</dd>
+            <dt>response.json()</dt><dd>Convert the response into JavaScript data.</dd>
+          </dl>
+          <h3>Collect several sources together</h3>
+          <div class="code-example">
+            <div class="code-toolbar"><span>collect-jobs.mjs: parallel collection</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const sourceResults = await Promise.allSettled([
+  collectGreenhouse(),
+  collectJobicy(),
+  collectRemotive(),
+  collectTulane(),
+  collectOchsner(),
+  collectEntergy()
+]);</code></pre>
+          </div>
+          <p><code>Promise.allSettled</code> starts all collectors and waits for every result. If one source fails, the other sources can still succeed. That is more reliable than letting one failure destroy the entire run.</p>
+          <div class="warning"><strong>Important boundary</strong>Only collect information a website publicly provides and allows you to access. Respect terms, rate limits, privacy, and robots rules. Never bypass logins or technical protections.</div>
+        </section>
+
+        <section id="chapter-13" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">13</span>
+              <div><h2>Matching Jobs and Writing Letters</h2><p>The robot uses transparent rules, not magic.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-13" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>collect-jobs.mjs: simplified scoring</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>function scoreJob(job) {
+  let score = 40;
+
+  if (job.description.includes("SQL")) {
+    score = score + 10;
+  }
+
+  if (job.description.includes("Python")) {
+    score = score + 10;
+  }
+
+  if (job.title.includes("Senior")) {
+    score = score - 10;
+  }
+
+  return Math.min(99, Math.max(20, score));
+}</code></pre>
+          </div>
+          <p>The real scoring function checks role families, resume skills, location, years of experience, and seniority. Adding points represents evidence of fit. Subtracting points represents a gap.</p>
+          <h3>Personalization uses template strings</h3>
+          <div class="code-example">
+            <div class="code-toolbar"><span>collect-jobs.mjs: letter building</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>function buildCoverLetter(job, fit) {
+  return [
+    "Dear Hiring Team,",
+    "",
+    `I am applying for the ${job.title} position with ${job.company}.`,
+    "",
+    `My experience connects with ${fit.skillsMatched.join(", ")}.`,
+    "",
+    "Sincerely,",
+    "Kieron Christopher Haynes"
+  ].join("\n");
+}</code></pre>
+          </div>
+          <p>This creates a list of paragraphs, inserts job-specific values, and joins the lines with <code>\n</code>, which means a new line.</p>
+          <div class="plain-box"><strong>Authenticity rule</strong>Automation should organize true experiences, not invent qualifications. Every final letter still needs human review for tone, accuracy, and the exact employer.</div>
+        </section>
+
+        <section id="chapter-14" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">14</span>
+              <div><h2>The Server and the Tests</h2><p>The server delivers files. Tests prove important facts.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-14" type="button">Mark Complete</button>
+          </div>
+          <div class="code-example">
+            <div class="code-toolbar"><span>server.mjs: smallest useful server idea</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>import { createServer } from "node:http";
+
+createServer((request, response) =&gt; {
+  response.writeHead(200, {
+    "Content-Type": "text/plain"
+  });
+  response.end("Hello from my server");
+}).listen(4174);</code></pre>
+          </div>
+          <p>The real server only permits known public files. This is called an allowlist. Unknown paths receive a 404 response.</p>
+          <div class="code-example">
+            <div class="code-toolbar"><span>validate-data.mjs: promises as tests</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>assert.equal(
+  jobs.length,
+  500,
+  "The dataset must contain exactly 500 jobs."
+);
+
+assert.equal(
+  new Set(jobs.map((job) =&gt; job.applyUrl)).size,
+  500,
+  "Every application URL must be unique."
+);</code></pre>
+          </div>
+          <p>An assertion says, “I expect this to be true.” If it is false, the test stops and explains which promise was broken.</p>
+          <div class="practice"><strong>Practice</strong>Write an assertion that expects an array named <code>projects</code> to contain exactly three items.</div>
+        </section>
+
+        <section id="chapter-15" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">15</span>
+              <div><h2>How to Work in VS Code</h2><p>Make small changes, inspect them, and keep working versions.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-15" type="button">Mark Complete</button>
+          </div>
+          <ol>
+            <li>Open VS Code.</li>
+            <li>Choose <strong>File → Open Folder</strong>.</li>
+            <li>Open the <code>job-application-robot</code> folder.</li>
+            <li>Use the Explorer on the left to open a file.</li>
+            <li>Change one small thing.</li>
+            <li>Save with <code>Ctrl+S</code>.</li>
+            <li>Refresh the browser and inspect the result.</li>
+            <li>Read the browser console or terminal if something fails.</li>
+          </ol>
+          <table class="command-table">
+            <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>node server.mjs</code></td><td>Starts the local robot at port 4174.</td></tr>
+              <tr><td><code>node tests/validate-data.mjs</code></td><td>Runs the data safety checks.</td></tr>
+              <tr><td><code>node scripts/collect-jobs.mjs</code></td><td>Refreshes the live job dataset.</td></tr>
+              <tr><td><code>git status</code></td><td>Shows files you changed.</td></tr>
+              <tr><td><code>git diff</code></td><td>Shows the exact changed lines.</td></tr>
+              <tr><td><code>git add filename</code></td><td>Selects a file for the next saved Git version.</td></tr>
+              <tr><td><code>git commit -m "Explain change"</code></td><td>Creates a named version in Git history.</td></tr>
+              <tr><td><code>git push</code></td><td>Sends committed versions to GitHub.</td></tr>
+            </tbody>
+          </table>
+          <div class="warning"><strong>Do not begin by changing ten files</strong>Change one idea at a time. Test it. Then commit it. Small steps make mistakes easier to understand and undo.</div>
+        </section>
+
+        <section id="chapter-16" class="guide-chapter">
+          <div class="chapter-heading">
+            <div class="chapter-title">
+              <span class="chapter-number">16</span>
+              <div><h2>Build Your Own Small App</h2><p>Use the same architecture without copying the whole robot.</p></div>
+            </div>
+            <button class="complete-button" data-complete-chapter="chapter-16" type="button">Mark Complete</button>
+          </div>
+          <h3>Project idea: Personal Project Tracker</h3>
+          <ol>
+            <li>Create <code>index.html</code>, <code>styles.css</code>, and <code>app.js</code>.</li>
+            <li>Make a header with the app name.</li>
+            <li>Create a form with project name and status.</li>
+            <li>Create an empty <code>&lt;div id="projects"&gt;</code>.</li>
+            <li>In JavaScript, create an empty <code>projects</code> array.</li>
+            <li>When the form is submitted, create a project object.</li>
+            <li>Push the object into the array.</li>
+            <li>Render every object as a visible row.</li>
+            <li>Save the array with local storage.</li>
+            <li>Add CSS and one phone media query.</li>
+          </ol>
+          <div class="code-example">
+            <div class="code-toolbar"><span>The core pattern you will reuse everywhere</span><button class="copy-button" data-copy-code type="button">Copy</button></div>
+            <pre><code>const state = {
+  projects: []
+};
+
+function addProject(name) {
+  state.projects.push({
+    id: Date.now(),
+    name: name,
+    status: "New"
+  });
+
+  saveState();
+  render();
+}
+
+function render() {
+  // Turn state.projects into visible HTML.
+}
+
+function saveState() {
+  localStorage.setItem("myProjects", JSON.stringify(state));
+}</code></pre>
+          </div>
+          <div class="plain-box"><strong>The reusable app loop</strong>Receive input → validate it → update state → save state → render the screen. The Job Application Robot uses this same loop at a larger scale.</div>
+          <h3>Your learning order</h3>
+          <ol>
+            <li>HTML structure and forms</li>
+            <li>CSS box model, flexbox, and grid</li>
+            <li>JavaScript variables, arrays, objects, functions, and conditions</li>
+            <li>DOM selection and events</li>
+            <li>Array methods: <code>map</code>, <code>filter</code>, <code>find</code>, and <code>sort</code></li>
+            <li>Local storage and JSON</li>
+            <li>Fetch, async, and await</li>
+            <li>Node.js scripts and tests</li>
+            <li>Git and GitHub</li>
+          </ol>
+          <div class="practice"><strong>Final practice</strong>Rebuild one small section of the robot without looking at the original for ten minutes. Then compare your version. The goal is not perfect memory. The goal is learning how to reason your way back.</div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="guide-footer">
+      Built from the real Job Application Robot source. Keep experimenting, keep your changes small, and read every error as a clue.
+    </footer>
+
+    <script src="./learning-guide.js?v=20260615-1"></script>
+  </body>
+</html>
