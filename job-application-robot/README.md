@@ -13,6 +13,9 @@ The current build contains 500 deduplicated job prospects:
 ## Files
 
 - `index.html`: application structure
+- `learning-guide.html`: beginner-friendly course explaining how the project works
+- `learning-guide.css`: responsive styling for the course
+- `learning-guide.js`: guide navigation, progress, and code-copy controls
 - `styles.css`: desktop and mobile layout
 - `app.js`: filtering, tracking, cover-letter editor, and exports
 - `jobs-data.js`: generated 500-job dataset and cover letters
