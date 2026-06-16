@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-15T20:59:30.014Z",
+  "generatedAt": "2026-06-16T18:37:55.830Z",
   "sourceSummary": [
     {
       "source": "Greenhouse",
-      "collected": 767,
+      "collected": 765,
       "status": "ok"
     },
     {
       "source": "Jobicy",
-      "collected": 97,
+      "collected": 99,
       "status": "ok"
     },
     {
@@ -18,7 +18,7 @@
     },
     {
       "source": "Tulane",
-      "collected": 179,
+      "collected": 180,
       "status": "ok"
     },
     {
@@ -33,14 +33,14 @@
     }
   ],
   "stats": {
-    "rawCollected": 1235,
+    "rawCollected": 1236,
     "uniqueProspects": 1179,
     "selected": 500,
     "remote": 420,
     "newOrleans": 80,
     "strong": 124,
-    "good": 135,
-    "possible": 141,
-    "stretch": 100
+    "good": 129,
+    "possible": 133,
+    "stretch": 114
   }
 }

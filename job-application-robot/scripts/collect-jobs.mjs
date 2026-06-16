@@ -51,6 +51,139 @@ const applicant = {
   ]
 };
 
+const resumeLibrary = {
+  coreSkills: [
+    "Python", "Java", "JavaScript", "SQL", "Advanced Excel", "Power BI", "SharePoint",
+    "PowerShell", "Windows Server", "Active Directory", "AWS", "Azure", "Google Cloud",
+    "Linux", "REST APIs", "CRM data quality", "data modeling", "dashboards",
+    "automation", "AI prompt engineering", "technical documentation", "digital publishing"
+  ],
+  familySkills: {
+    "Data & Analytics": ["SQL", "Advanced Excel", "Power BI", "dashboards", "data modeling", "reporting pipelines", "CRM cleanup", "metrics analysis", "data quality", "Pandas"],
+    "IT & Systems": ["Windows Server", "Active Directory", "SharePoint", "permissions", "PowerShell", "Microsoft 365", "technical documentation", "support workflows", "troubleshooting", "identity basics"],
+    "Cloud & Infrastructure": ["AWS", "Azure", "Google Cloud", "Linux", "REST APIs", "PowerShell", "infrastructure concepts", "monitoring basics", "security awareness", "automation"],
+    "Software & QA": ["Python", "Java", "JavaScript", "SQL", "REST APIs", "backend development", "Git/GitHub", "automation", "testing mindset", "Godot"],
+    "Project & Program": ["Engineering Management", "project coordination", "stakeholder communication", "documentation", "process improvement", "workflow mapping", "implementation support", "planning", "delivery tracking", "risk awareness"],
+    "Operations & Process": ["operations analytics", "workflow improvement", "reporting", "documentation", "process design", "quality control", "coordination", "Excel modeling", "SharePoint systems", "continuous improvement"],
+    "Customer & Implementation": ["client services", "CRM coordination", "case data cleanup", "customer communication", "onboarding support", "training documentation", "service delivery", "technical translation", "workflow support", "issue tracking"],
+    "CRM & Business Systems": ["CRM data quality", "Salesforce concepts", "workflow automation", "SharePoint", "reporting", "data cleanup", "business systems", "process documentation", "integrations awareness", "Excel"],
+    "Content & Creative Technology": ["digital publishing", "editing", "audience engagement", "film production", "storytelling", "web portfolio", "creative direction", "content systems", "media production", "community communication"],
+    "Administration & Coordination": ["executive support", "records management", "documentation", "scheduling", "Microsoft Office", "SharePoint", "reporting", "stakeholder communication", "data entry accuracy", "operations coordination"]
+  },
+  experiences: [
+    {
+      title: "Data Analytics & Systems Contractor",
+      organization: "Hotel Management of New Orleans",
+      dates: "May 2025 - Feb 2026",
+      location: "New Orleans, LA",
+      families: ["Data & Analytics", "Operations & Process", "CRM & Business Systems", "Project & Program"],
+      bullets: [
+        "Analyzed occupancy, labor, and operational datasets with Excel and SQL to support cleaner staffing and business reporting decisions.",
+        "Built dashboards, recurring reporting pipelines, and spreadsheet models that converted day-to-day hotel activity into decision-ready information.",
+        "Supported Oracle Opera PMS reporting and SharePoint document workflows, improving how teams found, updated, and shared operational records.",
+        "Translated business questions into data checks, reporting views, and practical documentation for nontechnical stakeholders."
+      ]
+    },
+    {
+      title: "Client Services & Data Coordinator",
+      organization: "SBP",
+      dates: "Apr 2024 - Aug 2024",
+      location: "New Orleans, LA",
+      families: ["Customer & Implementation", "CRM & Business Systems", "Data & Analytics", "Operations & Process"],
+      bullets: [
+        "Cleaned and organized CRM information for disaster-recovery client services, improving the reliability of case records and follow-up workflows.",
+        "Automated recurring Excel and cloud-based reporting tasks to help teams track service activity with less manual rework.",
+        "Created AI prompt workflows and documentation that helped staff summarize information, draft repeatable communications, and reduce administrative friction.",
+        "Coordinated client-service data across busy workflows while maintaining accuracy, empathy, and operational follow-through."
+      ]
+    },
+    {
+      title: "Editor-in-Chief",
+      organization: "The SUNO Observer",
+      dates: "Aug 2023 - Dec 2023",
+      location: "New Orleans, LA",
+      families: ["Content & Creative Technology", "Project & Program", "Data & Analytics", "Administration & Coordination"],
+      bullets: [
+        "Led the student newsroom's transition from print-focused work to a stronger digital publishing model.",
+        "Built engagement tracking and editorial planning systems that helped the team understand audience activity and organize publication work.",
+        "Managed deadlines, contributor communication, editing workflows, and cybersecurity-aware publishing practices.",
+        "Connected storytelling, leadership, and practical technology to make student media more visible and organized."
+      ]
+    },
+    {
+      title: "Executive Assistant / IT Operations",
+      organization: "Honore Consultants",
+      dates: "Jul 2022 - Dec 2022",
+      location: "New Orleans, LA",
+      families: ["IT & Systems", "Administration & Coordination", "Operations & Process", "Project & Program"],
+      bullets: [
+        "Supported Windows Server and Active Directory workflows, including user access, permissions, and operational documentation.",
+        "Created repeatable administrative and IT process documents that made internal work easier to follow and transfer.",
+        "Coordinated executive support, records, scheduling, and technical tasks in a fast-moving consulting environment.",
+        "Helped connect business needs with practical systems support, documentation, and follow-through."
+      ]
+    },
+    {
+      title: "Data Analyst Intern",
+      organization: "Bureau of Treasury",
+      dates: "Jan 2022 - Jun 2022",
+      location: "New Orleans, LA",
+      families: ["Data & Analytics", "Administration & Coordination", "Operations & Process", "IT & Systems"],
+      bullets: [
+        "Digitized taxpayer records and supported database organization for public-sector reporting and retrieval.",
+        "Assisted with database development, record accuracy, and reporting workflows that improved access to important information.",
+        "Maintained attention to detail while working with sensitive administrative records and structured data.",
+        "Built a stronger foundation in public-sector data quality, documentation, and operational accountability."
+      ]
+    },
+    {
+      title: "Creative Director / Filmmaker",
+      organization: "Majeste Productions and Independent Projects",
+      dates: "2019 - Present",
+      location: "New Orleans, LA",
+      families: ["Content & Creative Technology", "Project & Program", "Customer & Implementation"],
+      bullets: [
+        "Directed, edited, and published short films and creative projects, including work featured in the 2019 Black NOLA Film Festival.",
+        "Managed project concepts, production planning, editing decisions, and public-facing creative releases.",
+        "Used storytelling, visual communication, and self-directed production work to build a creative portfolio alongside technical education.",
+        "Balanced audience awareness, project ownership, and practical execution from idea through final delivery."
+      ]
+    }
+  ],
+  projects: [
+    {
+      name: "Backend, chess engine, and data tools",
+      families: ["Software & QA", "Data & Analytics", "Cloud & Infrastructure"],
+      bullets: [
+        "Built backend applications, data utilities, and chess-engine logic using Python, Java, JavaScript, SQL, and Git/GitHub.",
+        "Practiced API thinking, data structures, debugging, and modular development through portfolio projects."
+      ]
+    },
+    {
+      name: "3D simulation game and interactive systems",
+      families: ["Software & QA", "Content & Creative Technology"],
+      bullets: [
+        "Developed interactive simulation work in Godot, combining programming logic, gameplay systems, and user-facing design.",
+        "Used creative technology projects to connect technical problem solving with storytelling and interactive experience."
+      ]
+    },
+    {
+      name: "Portfolio, automation, and AI workflows",
+      families: ["Project & Program", "Operations & Process", "CRM & Business Systems", "IT & Systems", "Customer & Implementation"],
+      bullets: [
+        "Built public portfolio materials showing technical projects, creative work, and professional growth across data, systems, and software.",
+        "Created automation and AI prompt workflows for reporting, drafting, documentation, and productivity use cases."
+      ]
+    }
+  ],
+  leadership: [
+    "Editor-in-Chief, The SUNO Observer",
+    "President, Majeste Productions",
+    "Freshman Class President, Southern University at New Orleans",
+    "Beta Gamma Sigma member"
+  ]
+};
+
 const greenhouseBoards = [
   ["Samsara", "samsara"],
   ["Instacart", "instacart"],
@@ -373,6 +506,149 @@ function buildApplicationAnswers(job, fit) {
   };
 }
 
+function buildTailoredResume(job, fit) {
+  const family = fit.roleFamily;
+  const matchedSkills = fit.skillsMatched.map(titleCaseSkill);
+  const prioritySkills = uniqueList([
+    ...(resumeLibrary.familySkills[family] || []),
+    ...matchedSkills,
+    ...resumeLibrary.coreSkills
+  ]).slice(0, 18);
+  const selectedExperiences = selectResumeExperiences(family);
+  const selectedProjects = selectResumeProjects(family);
+  const summary = resumeSummary(job, fit, prioritySkills);
+
+  return [
+    applicant.name.toUpperCase(),
+    "New Orleans, Louisiana | Portfolio: " + applicant.portfolio,
+    "Public-safe resume draft: add current phone number and preferred email before submitting.",
+    "",
+    "TARGET ROLE",
+    `${job.title} | ${job.company} | ${job.workMode}`,
+    "",
+    "PROFESSIONAL SUMMARY",
+    summary,
+    "",
+    "CORE SKILLS",
+    wrapList(prioritySkills),
+    "",
+    "EDUCATION",
+    "M.S. Computer Science, University of New Orleans | Expected May 2027",
+    "M.S. Engineering Management, University of New Orleans | May 2025",
+    "B.S. Computer Information Systems, Southern University at New Orleans | May 2024",
+    "",
+    "SELECTED EXPERIENCE",
+    selectedExperiences.map((experience) => formatExperience(experience, family, matchedSkills)).join("\n\n"),
+    "",
+    "SELECTED PROJECTS",
+    selectedProjects.map((project) => formatProject(project)).join("\n\n"),
+    "",
+    "LEADERSHIP AND COMMUNITY",
+    resumeLibrary.leadership.map((item) => `- ${item}`).join("\n"),
+    "",
+    "TAILORING NOTES BEFORE SUBMITTING",
+    "- Add private contact details in the header before uploading or emailing.",
+    "- Recheck the live job post for exact keywords, required years, location rules, and salary questions.",
+    "- Keep all claims truthful; adjust bullets if the employer asks for more specific tools or outcomes."
+  ].join("\n");
+}
+
+function resumeSummary(job, fit, prioritySkills) {
+  const skillPhrase = prioritySkills.slice(0, 6).join(", ");
+  const rolePhrase = fit.roleFamily.toLowerCase();
+  const modePhrase = job.workMode === "Remote"
+    ? "prepared for distributed U.S. remote work from New Orleans"
+    : "available for in-person work in New Orleans";
+  return `Graduate computer science student with an M.S. in Engineering Management, a B.S. in Computer Information Systems, and hands-on experience across data analytics, IT systems, client-service operations, digital publishing, automation, and creative technology. Strong fit for ${job.title} work because the role connects with ${rolePhrase}, especially ${skillPhrase}. ${modePhrase}; known for turning messy workflows into clearer data, documentation, systems, and practical deliverables.`;
+}
+
+function selectResumeExperiences(family) {
+  return [...resumeLibrary.experiences]
+    .sort((a, b) => experienceScore(b, family) - experienceScore(a, family))
+    .slice(0, 5);
+}
+
+function experienceScore(experience, family) {
+  const index = experience.families.indexOf(family);
+  return index >= 0 ? 10 + Math.max(0, 4 - index) : 0;
+}
+
+function selectResumeProjects(family) {
+  return [...resumeLibrary.projects]
+    .sort((a, b) => projectScore(b, family) - projectScore(a, family))
+    .slice(0, 2);
+}
+
+function projectScore(project, family) {
+  return project.families.includes(family) ? 10 : 0;
+}
+
+function formatExperience(experience, family, matchedSkills) {
+  const bullets = [
+    ...experience.bullets.filter((bullet) => isRelevantBullet(bullet, family, matchedSkills)),
+    ...experience.bullets
+  ].filter((bullet, index, list) => list.indexOf(bullet) === index).slice(0, 3);
+  return [
+    `${experience.title} | ${experience.organization} | ${experience.location}`,
+    experience.dates,
+    bullets.map((bullet) => `- ${bullet}`).join("\n")
+  ].join("\n");
+}
+
+function isRelevantBullet(bullet, family, matchedSkills) {
+  const text = normalize(bullet);
+  const familyTerms = (resumeLibrary.familySkills[family] || []).map(normalize);
+  return [...familyTerms, ...matchedSkills.map(normalize)].some((term) => term && text.includes(term));
+}
+
+function formatProject(project) {
+  return [
+    project.name,
+    project.bullets.map((bullet) => `- ${bullet}`).join("\n")
+  ].join("\n");
+}
+
+function wrapList(items) {
+  return items.map((item) => `- ${item}`).join("\n");
+}
+
+function uniqueList(items) {
+  const seen = new Set();
+  const result = [];
+  for (const item of items) {
+    const key = normalize(item);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    result.push(item);
+  }
+  return result;
+}
+
+function titleCaseSkill(value) {
+  const known = new Map([
+    ["sql", "SQL"],
+    ["api", "API"],
+    ["rest api", "REST APIs"],
+    ["aws", "AWS"],
+    ["crm", "CRM"],
+    ["qa", "QA"],
+    ["it", "IT"],
+    ["python", "Python"],
+    ["java", "Java"],
+    ["javascript", "JavaScript"],
+    ["excel", "Excel"],
+    ["power bi", "Power BI"],
+    ["sharepoint", "SharePoint"],
+    ["powershell", "PowerShell"],
+    ["linux", "Linux"],
+    ["backend", "backend development"],
+    ["software", "software development"]
+  ]);
+  const key = normalize(value);
+  if (known.has(key)) return known.get(key);
+  return String(value || "").replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
 function finalizeJob(raw, index) {
   const fit = scoreJob(raw);
   const job = {
@@ -398,6 +674,7 @@ function finalizeJob(raw, index) {
   };
   job.coverLetter = buildCoverLetter(job, fit);
   job.applicationAnswers = buildApplicationAnswers(job, fit);
+  job.tailoredResume = buildTailoredResume(job, fit);
   return job;
 }
 
