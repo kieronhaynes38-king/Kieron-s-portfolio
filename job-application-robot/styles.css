@@ -608,6 +608,21 @@ a:focus-visible {
   font-size: 0.76rem;
 }
 
+.resume-editor {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.resume-note {
+  margin: 8px 0 10px;
+  border-left: 4px solid var(--gold);
+  background: var(--surface-soft);
+  color: #455360;
+  padding: 10px 12px;
+  font-size: 0.86rem;
+}
+
 .answers-grid {
   display: grid;
   gap: 10px;

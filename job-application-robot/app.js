@@ -34,17 +34,22 @@
     return document.getElementById(id);
   }
 
+  function defaultState() {
+    return {
+      saved: [],
+      statuses: {},
+      notes: {},
+      followUps: {},
+      letterEdits: {},
+      resumeEdits: {}
+    };
+  }
+
   function loadState() {
     try {
-      return JSON.parse(localStorage.getItem(storageKey)) || {
-        saved: [],
-        statuses: {},
-        notes: {},
-        followUps: {},
-        letterEdits: {}
-      };
+      return { ...defaultState(), ...(JSON.parse(localStorage.getItem(storageKey)) || {}) };
     } catch (error) {
-      return { saved: [], statuses: {}, notes: {}, followUps: {}, letterEdits: {} };
+      return defaultState();
     }
   }
 
@@ -211,6 +216,10 @@
     const coverBox = template.querySelector('[data-field="coverLetter"]');
     coverBox.value = coverLetter;
     setText(template, "wordCount", `${countWords(coverLetter)} words`);
+    const tailoredResume = state.resumeEdits[job.id] ?? job.tailoredResume ?? "";
+    const resumeBox = template.querySelector('[data-field="tailoredResume"]');
+    resumeBox.value = tailoredResume;
+    setText(template, "resumeWordCount", `${countWords(tailoredResume)} words`);
 
     const answers = [
       ["Why are you interested in this role?", job.applicationAnswers.whyThisRole],
@@ -258,8 +267,17 @@
     template.querySelector('[data-action="download-letter"]').addEventListener("click", () => {
       downloadText(`${safeFilename(job.company)}-${safeFilename(job.title)}-cover-letter.txt`, coverBox.value);
     });
+    template.querySelector('[data-action="copy-resume"]').addEventListener("click", () => copyText(resumeBox.value));
+    template.querySelector('[data-action="download-resume"]').addEventListener("click", () => {
+      downloadText(`${safeFilename(job.company)}-${safeFilename(job.title)}-tailored-resume.txt`, resumeBox.value);
+    });
     template.querySelector('[data-action="reset-letter"]').addEventListener("click", () => {
       delete state.letterEdits[job.id];
+      saveState();
+      renderDetail();
+    });
+    template.querySelector('[data-action="reset-resume"]').addEventListener("click", () => {
+      delete state.resumeEdits[job.id];
       saveState();
       renderDetail();
     });
@@ -268,6 +286,12 @@
       saveState();
       const counter = els.jobDetail.querySelector('[data-field="wordCount"]');
       if (counter) counter.textContent = `${countWords(coverBox.value)} words`;
+    });
+    resumeBox.addEventListener("input", () => {
+      state.resumeEdits[job.id] = resumeBox.value;
+      saveState();
+      const counter = els.jobDetail.querySelector('[data-field="resumeWordCount"]');
+      if (counter) counter.textContent = `${countWords(resumeBox.value)} words`;
     });
     statusSelect.addEventListener("change", () => {
       state.statuses[job.id] = statusSelect.value;

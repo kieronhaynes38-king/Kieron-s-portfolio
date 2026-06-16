@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A private-by-design job search CRM with 500 ranked remote and New Orleans opportunities." />
     <title>Job Application Robot</title>
-    <link rel="stylesheet" href="./styles.css?v=20260615-2" />
+    <link rel="stylesheet" href="./styles.css?v=20260616-1" />
   </head>
   <body>
     <header class="app-header">
@@ -190,6 +190,22 @@
           </div>
         </div>
         <textarea data-field="coverLetter" rows="24"></textarea>
+
+        <div class="resume-editor">
+          <div class="editor-heading">
+            <div>
+              <h3>Personalized Resume</h3>
+              <span data-field="resumeWordCount"></span>
+            </div>
+            <div>
+              <button class="button secondary" data-action="reset-resume" type="button">Reset</button>
+              <button class="button secondary" data-action="download-resume" type="button">Download</button>
+              <button class="button primary" data-action="copy-resume" type="button">Copy</button>
+            </div>
+          </div>
+          <p class="resume-note">Public-safe draft: add your current phone number and preferred job-search email before submitting.</p>
+          <textarea data-field="tailoredResume" rows="32"></textarea>
+        </div>
       </section>
 
       <section class="tab-panel" data-panel="answers">
@@ -214,7 +230,7 @@
       </section>
     </template>
 
-    <script src="./jobs-data.js?v=20260615-2"></script>
-    <script src="./app.js?v=20260615-2"></script>
+    <script src="./jobs-data.js?v=20260616-1"></script>
+    <script src="./app.js?v=20260616-1"></script>
   </body>
 </html>
