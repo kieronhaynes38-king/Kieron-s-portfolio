@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn the Portfolio | Kieron Christopher Haynes</title>
+  <meta name="description" content="A complete beginner-friendly guide to understanding, rebuilding, editing, and publishing Kieron Christopher Haynes' HTML, CSS, and JavaScript portfolio.">
+  <link rel="stylesheet" href="portfolio-guide.css">
+</head>
+<body>
+  <a class="skip-link" href="#lesson-content">Skip to the lessons</a>
+
+  <header class="guide-header">
+    <a class="guide-brand" href="index.html" aria-label="Return to Kieron Haynes portfolio">
+      <span class="brand-badge">KCH</span>
+      <span>
+        <strong>Learn the Portfolio</strong>
+        <small>Beginner code guide</small>
+      </span>
+    </a>
+    <nav aria-label="Guide actions">
+      <a href="index.html">View portfolio</a>
+      <a href="https://github.com/kieronhaynes38-king/Kieron-s-portfolio" target="_blank" rel="noreferrer">View source</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="guide-sidebar">Lessons</button>
+  </header>
+
+  <div class="reading-progress" aria-hidden="true">
+    <span id="readingProgress"></span>
+  </div>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar" id="guide-sidebar">
+      <div class="progress-card">
+        <p>Your progress</p>
+        <strong><span id="completedCount">0</span> of 20 lessons</strong>
+        <div class="progress-track"><span id="lessonProgress"></span></div>
+        <button type="button" id="resetProgress">Reset progress</button>
+      </div>
+
+      <nav class="lesson-nav" aria-label="Lesson navigation">
+        <a href="#start"><span>00</span> Start here</a>
+        <a href="#mental-model"><span>01</span> How websites work</a>
+        <a href="#setup"><span>02</span> Tools and folders</a>
+        <a href="#html-basics"><span>03</span> HTML basics</a>
+        <a href="#css-basics"><span>04</span> CSS basics</a>
+        <a href="#js-basics"><span>05</span> JavaScript basics</a>
+        <a href="#page-shell"><span>06</span> Page shell</a>
+        <a href="#header"><span>07</span> Header and navigation</a>
+        <a href="#hero"><span>08</span> Hero section</a>
+        <a href="#profile"><span>09</span> Profile section</a>
+        <a href="#experience"><span>10</span> Experience section</a>
+        <a href="#skills"><span>11</span> Skills and code tabs</a>
+        <a href="#projects"><span>12</span> Game and project area</a>
+        <a href="#films"><span>13</span> Film cards and modal</a>
+        <a href="#education"><span>14</span> Education and contact</a>
+        <a href="#canvas"><span>15</span> Canvas animation</a>
+        <a href="#responsive"><span>16</span> Mobile and accessibility</a>
+        <a href="#assets"><span>17</span> Images and résumé</a>
+        <a href="#publishing"><span>18</span> GitHub Pages</a>
+        <a href="#debugging"><span>19</span> Debugging and next steps</a>
+      </nav>
+    </aside>
+
+    <main id="lesson-content">
+      <section class="course-hero" id="start">
+        <p class="eyebrow">Start with zero coding experience</p>
+        <h1>How this portfolio was built—<em>one understandable piece at a time.</em></h1>
+        <p class="course-lede">This course uses the real Kieron Christopher Haynes portfolio as your first web-development classroom. You will learn what every file does, how each page section is constructed, how the interactive features work, and how to safely make and publish your own changes.</p>
+
+        <div class="hero-cards">
+          <article>
+            <span>HTML</span>
+            <h2>The structure</h2>
+            <p>Headings, paragraphs, buttons, images, sections, and the meaning of the page.</p>
+          </article>
+          <article>
+            <span>CSS</span>
+            <h2>The presentation</h2>
+            <p>Color, spacing, typography, layout, responsive behavior, and visual polish.</p>
+          </article>
+          <article>
+            <span>JavaScript</span>
+            <h2>The behavior</h2>
+            <p>Tabs, video controls, animation, clicks, keyboard actions, and changing the page.</p>
+          </article>
+        </div>
+
+        <div class="course-note">
+          <strong>You do not need to memorize everything.</strong>
+          <p>Your first goal is to recognize the pieces and understand how they connect. Confidence comes from making small changes, refreshing the page, and observing what happened.</p>
+        </div>
+      </section>
+
+      <section class="lesson" id="mental-model" data-lesson="1">
+        <div class="lesson-heading">
+          <span class="lesson-number">01</span>
+          <div>
+            <p class="eyebrow">The mental model</p>
+            <h2>What happens when someone opens your website?</h2>
+          </div>
+        </div>
+
+        <p>A website is a group of files that a browser reads. When someone visits your portfolio address, GitHub Pages sends those files to Chrome, Safari, Edge, or Firefox. The browser reads the files and turns them into the page you see.</p>
+
+        <div class="flow-diagram" aria-label="Website file flow">
+          <div><strong>1</strong><span>Visitor enters your URL</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>2</strong><span>GitHub Pages sends files</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>3</strong><span>Browser reads HTML, CSS, and JS</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>4</strong><span>Portfolio appears</span></div>
+        </div>
+
+        <div class="concept-grid">
+          <article>
+            <h3>HTML is the building frame</h3>
+            <p>It says, “this is a heading,” “this is a picture,” and “this is the experience section.”</p>
+          </article>
+          <article>
+            <h3>CSS is the interior design</h3>
+            <p>It decides the colors, sizes, positions, spacing, borders, and mobile layout.</p>
+          </article>
+          <article>
+            <h3>JavaScript is the electricity</h3>
+            <p>It reacts when a visitor clicks a tab, opens a film, presses Escape, or resizes the window.</p>
+          </article>
+          <article>
+            <h3>Assets are the content files</h3>
+            <p>Images, film thumbnails, game artwork, and your résumé PDF live in asset folders.</p>
+          </article>
+        </div>
+
+        <div class="plain-language">
+          <strong>Plain English:</strong> HTML decides <em>what exists</em>, CSS decides <em>how it looks</em>, and JavaScript decides <em>what it does</em>.
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="1"> I understand the three main jobs: structure, style, and behavior.</label>
+      </section>
+
+      <section class="lesson" id="setup" data-lesson="2">
+        <div class="lesson-heading">
+          <span class="lesson-number">02</span>
+          <div>
+            <p class="eyebrow">Before writing code</p>
+            <h2>Your tools and project folders</h2>
+          </div>
+        </div>
+
+        <p>You only need a text editor, a web browser, and the project folder. A code editor such as Visual Studio Code makes the files easier to read because it colors different parts of the code.</p>
+
+        <h3>The portfolio’s simplified folder map</h3>
+        <div class="code-block">
+          <div class="code-label"><span>Project structure</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>Kieron-s-portfolio/
+├── index.html
+├── styles.css
+├── script.js
+├── portfolio-guide.html
+├── portfolio-guide.css
+├── portfolio-guide.js
+└── assets/
+    ├── film/
+    │   ├── covid-entanglement.jpg
+    │   └── other-film-images.jpg
+    ├── game/
+    │   └── tycoon-intro.png
+    ├── resume/
+    │   └── Kieron-Christopher-Haynes-Resume-Updated.pdf
+    └── social/
+        └── graduation-portrait.jpg</code></pre>
+        </div>
+
+        <div class="breakdown">
+          <div><code>index.html</code><p>The main portfolio page and its written content.</p></div>
+          <div><code>styles.css</code><p>Every visual rule used by the main portfolio.</p></div>
+          <div><code>script.js</code><p>The tabs, film modal, keyboard controls, and canvas animation.</p></div>
+          <div><code>assets/</code><p>Organized folders for images, media, and the résumé.</p></div>
+        </div>
+
+        <div class="practice">
+          <strong>Try this:</strong>
+          <ol>
+            <li>Open the project folder in a code editor.</li>
+            <li>Find <code>index.html</code>, <code>styles.css</code>, and <code>script.js</code>.</li>
+            <li>Do not edit yet. Just notice that each filename matches one of the three jobs.</li>
+          </ol>
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="2"> I can identify the main files and asset folders.</label>
+      </section>
+
+      <section class="lesson" id="html-basics" data-lesson="3">
+        <div class="lesson-heading">
+          <span class="lesson-number">03</span>
+          <div>
+            <p class="eyebrow">Language one</p>
+            <h2>HTML basics: tags, elements, and attributes</h2>
+          </div>
+        </div>
+
+        <p>HTML stands for HyperText Markup Language. It is not a programming language that calculates things. It is a markup language that labels content so the browser understands its meaning.</p>
+
+        <div class="anatomy-card">
+          <code>&lt;a class="primary-button" href="#experience"&gt;View Experience&lt;/a&gt;</code>
+          <div class="anatomy-notes">
+            <span><strong>&lt;a</strong> — opening tag for a link</span>
+            <span><strong>class="primary-button"</strong> — a CSS label</span>
+            <span><strong>href="#experience"</strong> — where the link goes</span>
+            <span><strong>View Experience</strong> — visible text</span>
+            <span><strong>&lt;/a&gt;</strong> — closing tag</span>
+          </div>
+        </div>
+
+        <h3>Common HTML elements used in your portfolio</h3>
+        <div class="reference-table" role="region" aria-label="Common HTML elements" tabindex="0">
+          <table>
+            <thead><tr><th>Element</th><th>Meaning</th><th>Portfolio use</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;header&gt;</code></td><td>Top area of a page</td><td>Logo, navigation, résumé button</td></tr>
+              <tr><td><code>&lt;nav&gt;</code></td><td>Navigation links</td><td>Links to Experience, Skills, Game, and Contact</td></tr>
+              <tr><td><code>&lt;main&gt;</code></td><td>Main page content</td><td>Wraps all major portfolio sections</td></tr>
+              <tr><td><code>&lt;section&gt;</code></td><td>A themed group of content</td><td>Hero, profile, experience, films, education</td></tr>
+              <tr><td><code>&lt;article&gt;</code></td><td>Self-contained item</td><td>One job, film, skill, or degree card</td></tr>
+              <tr><td><code>&lt;h1&gt;–&lt;h3&gt;</code></td><td>Heading levels</td><td>Name, section titles, card titles</td></tr>
+              <tr><td><code>&lt;p&gt;</code></td><td>Paragraph</td><td>Descriptions and explanations</td></tr>
+              <tr><td><code>&lt;img&gt;</code></td><td>Image</td><td>Portrait, game art, film thumbnails</td></tr>
+              <tr><td><code>&lt;a&gt;</code></td><td>Link</td><td>Buttons, email, GitHub, résumé</td></tr>
+              <tr><td><code>&lt;button&gt;</code></td><td>Action on the current page</td><td>Film player and code tabs</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="warning">
+          <strong>Important distinction:</strong> Use a link when the visitor travels somewhere. Use a button when something happens on the current page.
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="3"> I can identify a tag, attribute, visible text, and closing tag.</label>
+      </section>
+
+      <section class="lesson" id="css-basics" data-lesson="4">
+        <div class="lesson-heading">
+          <span class="lesson-number">04</span>
+          <div>
+            <p class="eyebrow">Language two</p>
+            <h2>CSS basics: selectors, properties, and the box model</h2>
+          </div>
+        </div>
+
+        <p>CSS stands for Cascading Style Sheets. CSS finds HTML using a selector and applies visual rules to it.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>A CSS rule</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>.primary-button {
+  color: #17130a;
+  background: #ffe08a;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+}</code></pre>
+        </div>
+
+        <div class="anatomy-card compact">
+          <div class="anatomy-notes">
+            <span><strong>.primary-button</strong> — selector: find elements with this class</span>
+            <span><strong>color</strong> — property: what you want to change</span>
+            <span><strong>#17130a</strong> — value: the setting you chose</span>
+            <span><strong>{ }</strong> — block containing the declarations</span>
+            <span><strong>;</strong> — marks the end of one declaration</span>
+          </div>
+        </div>
+
+        <h3>The box model</h3>
+        <div class="box-model">
+          <div class="margin-box">margin
+            <div class="border-box">border
+              <div class="padding-box">padding
+                <div class="content-box">content</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Every element is treated like a box. The content is in the center. Padding creates breathing room inside the border. Margin creates space outside the border.</p>
+
+        <h3>Reusable color variables</h3>
+        <div class="code-block">
+          <div class="code-label"><span>From styles.css</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>:root {
+  --ink: #0b0d10;
+  --paper: #fffaf0;
+  --gold: #d9a935;
+  --gold-bright: #ffe08a;
+  --teal: #55d6be;
+}
+
+body {
+  color: var(--paper);
+  background: var(--ink);
+}</code></pre>
+        </div>
+        <p>Variables give important values names. If you later change <code>--gold</code>, every rule using <code>var(--gold)</code> updates together.</p>
+
+        <div class="practice">
+          <strong>Try this:</strong> Change <code>--gold-bright</code> to <code>#9ee493</code>, refresh the page, observe the result, and then undo the change.
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="4"> I understand a selector, property, value, and the box model.</label>
+      </section>
+
+      <section class="lesson" id="js-basics" data-lesson="5">
+        <div class="lesson-heading">
+          <span class="lesson-number">05</span>
+          <div>
+            <p class="eyebrow">Language three</p>
+            <h2>JavaScript basics: values, functions, and events</h2>
+          </div>
+        </div>
+
+        <p>JavaScript is a programming language. It stores information, makes decisions, repeats work, and responds to the visitor.</p>
+
+        <div class="concept-grid three">
+          <article><h3>Variable</h3><code>const modal = ...</code><p>A named place that stores a value.</p></article>
+          <article><h3>Function</h3><code>function openVideo() { }</code><p>A reusable group of instructions.</p></article>
+          <article><h3>Event</h3><code>addEventListener("click", ...)</code><p>Something the visitor or browser does.</p></article>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Click behavior</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>const button = document.querySelector(".play-button");
+
+function sayHello() {
+  alert("Hello, Kieron!");
+}
+
+button.addEventListener("click", sayHello);</code></pre>
+        </div>
+
+        <ol class="step-list">
+          <li><strong>Find the element.</strong> <code>querySelector</code> looks through the HTML for the first matching class.</li>
+          <li><strong>Create the instructions.</strong> The function describes what should happen.</li>
+          <li><strong>Listen for an event.</strong> The listener waits for a click and then runs the function.</li>
+        </ol>
+
+        <div class="plain-language"><strong>Plain English:</strong> “Browser, find this button. When someone clicks it, run these instructions.”</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="5"> I understand variables, functions, and event listeners.</label>
+      </section>
+
+      <section class="lesson" id="page-shell" data-lesson="6">
+        <div class="lesson-heading">
+          <span class="lesson-number">06</span>
+          <div>
+            <p class="eyebrow">Build step one</p>
+            <h2>Create the page shell and connect the files</h2>
+          </div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Minimum index.html</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Kieron Christopher Haynes | Portfolio&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Kieron Christopher Haynes&lt;/h1&gt;
+  &lt;/main&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="breakdown">
+          <div><code>&lt;!DOCTYPE html&gt;</code><p>Tells the browser to use modern HTML rules.</p></div>
+          <div><code>lang="en"</code><p>Tells assistive technology that the page is written in English.</p></div>
+          <div><code>&lt;meta charset&gt;</code><p>Allows common letters, punctuation, and symbols to display properly.</p></div>
+          <div><code>&lt;meta name="viewport"&gt;</code><p>Makes the page size correctly on phones.</p></div>
+          <div><code>&lt;link rel="stylesheet"&gt;</code><p>Connects the HTML to <code>styles.css</code>.</p></div>
+          <div><code>&lt;script src&gt;</code><p>Connects the HTML to <code>script.js</code>.</p></div>
+        </div>
+
+        <div class="warning"><strong>Common mistake:</strong> A filename must match exactly. <code>styles.css</code>, <code>Styles.css</code>, and <code>style.css</code> are different names on a web server.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="6"> I know how the HTML connects to the CSS and JavaScript files.</label>
+      </section>
+
+      <section class="lesson" id="header" data-lesson="7">
+        <div class="lesson-heading">
+          <span class="lesson-number">07</span>
+          <div>
+            <p class="eyebrow">Portfolio section one</p>
+            <h2>Build the fixed header and navigation</h2>
+          </div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Header HTML</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;header class="site-header"&gt;
+  &lt;a class="brand-mark" href="#top" aria-label="Home"&gt;
+    &lt;span&gt;KCH&lt;/span&gt;
+  &lt;/a&gt;
+
+  &lt;nav class="main-nav" aria-label="Primary navigation"&gt;
+    &lt;a href="#experience"&gt;Experience&lt;/a&gt;
+    &lt;a href="#skills"&gt;Skills&lt;/a&gt;
+    &lt;a href="#game"&gt;Game&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;a class="nav-action"
+     href="assets/resume/Kieron-Christopher-Haynes-Resume-Updated.pdf"&gt;
+    Résumé
+  &lt;/a&gt;
+&lt;/header&gt;</code></pre>
+        </div>
+
+        <p>The links beginning with <code>#</code> point to an <code>id</code> on the same page. For example, <code>href="#skills"</code> travels to <code>&lt;section id="skills"&gt;</code>.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Header CSS idea</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 18px 40px;
+  z-index: 20;
+}</code></pre>
+        </div>
+
+        <div class="plain-language"><strong>Why these rules matter:</strong> <code>position: fixed</code> keeps the header visible while scrolling. The three grid columns hold the logo, center navigation, and résumé action. <code>z-index</code> keeps the header above the page content.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="7"> I understand page anchors and the header’s three-column grid.</label>
+      </section>
+
+      <section class="lesson" id="hero" data-lesson="8">
+        <div class="lesson-heading">
+          <span class="lesson-number">08</span>
+          <div>
+            <p class="eyebrow">Portfolio section two</p>
+            <h2>Build the hero: first impression and primary action</h2>
+          </div>
+        </div>
+
+        <p>The hero is the first large section. Its job is to answer four questions quickly: Who are you? What do you do? Where are you? What should the visitor do next?</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Hero structure</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;section class="hero-section" aria-labelledby="hero-title"&gt;
+  &lt;img class="hero-bg"
+       src="assets/social/graduation-portrait.jpg"
+       alt=""&gt;
+  &lt;div class="hero-shade"&gt;&lt;/div&gt;
+
+  &lt;div class="hero-content"&gt;
+    &lt;p class="eyebrow"&gt;New Orleans data, systems &amp; cloud technologist&lt;/p&gt;
+    &lt;h1 id="hero-title"&gt;Kieron Christopher Haynes&lt;/h1&gt;
+    &lt;p class="hero-lede"&gt;I turn complex operations into clear systems...&lt;/p&gt;
+    &lt;a class="primary-button" href="#experience"&gt;View experience&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;figure class="hero-portrait"&gt;
+    &lt;img src="assets/social/graduation-portrait.jpg"
+         alt="Kieron Christopher Haynes graduation portrait"&gt;
+  &lt;/figure&gt;
+&lt;/section&gt;</code></pre>
+        </div>
+
+        <h3>Why the same image appears twice</h3>
+        <p>One copy becomes a soft full-section background. The other is the sharp portrait card. The background image has an empty <code>alt=""</code> because it is decorative; the portrait has useful alternative text because it communicates identity.</p>
+
+        <div class="practice">
+          <strong>Try this:</strong> Change only the eyebrow text. Save, refresh, and confirm that the layout stays the same while the content changes.
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="8"> I understand the hero’s content, background layer, portrait, and call to action.</label>
+      </section>
+
+      <section class="lesson" id="profile" data-lesson="9">
+        <div class="lesson-heading">
+          <span class="lesson-number">09</span>
+          <div>
+            <p class="eyebrow">Portfolio section three</p>
+            <h2>Turn résumé facts into a professional profile</h2>
+          </div>
+        </div>
+
+        <p>The profile section is not a copy of the résumé. It is a short story that connects education, technical ability, and the type of work you want. Your page uses one wide text column and one focused career card.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Profile layout pattern</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;section id="brand" class="section-pad brand-section"&gt;
+  &lt;div class="brand-layout"&gt;
+    &lt;div class="brand-copy"&gt;
+      &lt;p class="eyebrow"&gt;Professional profile&lt;/p&gt;
+      &lt;h2&gt;Graduate-level technical training...&lt;/h2&gt;
+      &lt;p&gt;Data and systems professional with experience...&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;aside class="profile-card"&gt;
+      &lt;h3&gt;Ready to contribute across data, systems, cloud, and software.&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Data analysis and business intelligence&lt;/li&gt;
+        &lt;li&gt;Systems administration and technology operations&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/aside&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        </div>
+
+        <div class="concept-grid three">
+          <article><h3>Evidence</h3><p>Degrees, dates, technologies, and real experience.</p></article>
+          <article><h3>Direction</h3><p>The data, systems, cloud, and software roles you are seeking.</p></article>
+          <article><h3>Value</h3><p>The problems you help organizations solve.</p></article>
+        </div>
+
+        <div class="warning"><strong>Common mistake:</strong> Avoid vague claims such as “hard worker” unless the page also shows evidence. Specific tools, outcomes, responsibilities, and projects make the claim believable.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="9"> I understand how the profile converts résumé facts into a focused professional story.</label>
+      </section>
+
+      <section class="lesson" id="experience" data-lesson="10">
+        <div class="lesson-heading">
+          <span class="lesson-number">10</span>
+          <div>
+            <p class="eyebrow">Portfolio section four</p>
+            <h2>Build the experience timeline one job at a time</h2>
+          </div>
+        </div>
+
+        <p>Each role uses the same HTML pattern. Repeating one predictable pattern makes the timeline consistent and easy to update.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>One experience entry</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;article class="timeline-item"&gt;
+  &lt;div class="timeline-date"&gt;Sept 2021 - Nov 2021&lt;/div&gt;
+  &lt;div class="timeline-body"&gt;
+    &lt;h3&gt;Management Development Asst&lt;/h3&gt;
+    &lt;p class="company"&gt;City of New Orleans — Mayor's Office&lt;/p&gt;
+    &lt;p&gt;
+      &lt;strong&gt;Housing, Data &amp; Constituent Services Support:&lt;/strong&gt;
+      Handled constituent calls, documented resident concerns,
+      supported rental-assistance workflows, coordinated
+      affordable-housing information, and organized office data.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+        </div>
+
+        <div class="breakdown">
+          <div><code>&lt;article&gt;</code><p>Groups one complete role.</p></div>
+          <div><code>.timeline-date</code><p>Holds the date range in the first grid column.</p></div>
+          <div><code>&lt;h3&gt;</code><p>Uses the official job title.</p></div>
+          <div><code>.company</code><p>Identifies the employer and receives accent styling.</p></div>
+          <div><code>&lt;strong&gt;</code><p>Preserves useful functional context without changing the official title.</p></div>
+        </div>
+
+        <h3>How to write a strong experience description</h3>
+        <p>Use this formula: <strong>action + task or tool + reason or result</strong>.</p>
+        <div class="formula">
+          <span>Analyzed</span><b>+</b><span>occupancy and labor data with Excel and SQL</span><b>+</b><span>to support operational decisions</span>
+        </div>
+
+        <div class="practice">
+          <strong>Try this:</strong> Duplicate one <code>timeline-item</code>, change the title and company to a practice role, refresh, then undo the change. This teaches you how repeated components work.
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="10"> I can explain and duplicate an experience entry without changing the pattern.</label>
+      </section>
+
+      <section class="lesson" id="skills" data-lesson="11">
+        <div class="lesson-heading">
+          <span class="lesson-number">11</span>
+          <div>
+            <p class="eyebrow">Portfolio section five</p>
+            <h2>Build skill cards and interactive code tabs</h2>
+          </div>
+        </div>
+
+        <p>The skills area has a static part and an interactive part. The cards are ordinary HTML. The code tabs connect HTML data attributes to JavaScript.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Tab buttons in HTML</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;button class="code-tab is-active"
+        type="button"
+        data-code="game"&gt;
+  Game Control
+&lt;/button&gt;
+
+&lt;button class="code-tab"
+        type="button"
+        data-code="data"&gt;
+  Data Pipeline
+&lt;/button&gt;
+
+&lt;pre class="code-window"&gt;&lt;code id="codeSample"&gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Tab behavior in JavaScript</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>const codeOutput = document.querySelector("#codeSample");
+const codeTabs = document.querySelectorAll(".code-tab");
+
+function setCodeSample(name) {
+  codeOutput.textContent = codeSamples[name];
+
+  codeTabs.forEach((tab) =&gt; {
+    tab.classList.toggle(
+      "is-active",
+      tab.dataset.code === name
+    );
+  });
+}
+
+codeTabs.forEach((tab) =&gt; {
+  tab.addEventListener("click", () =&gt; {
+    setCodeSample(tab.dataset.code);
+  });
+});</code></pre>
+        </div>
+
+        <ol class="step-list">
+          <li>The browser finds every element with the <code>code-tab</code> class.</li>
+          <li>A click listener is attached to each button.</li>
+          <li><code>tab.dataset.code</code> reads <code>data-code="game"</code> or another value.</li>
+          <li>The matching code sample is placed inside <code>#codeSample</code>.</li>
+          <li>The active class moves to the selected button so CSS can highlight it.</li>
+        </ol>
+
+        <div class="plain-language"><strong>The connection:</strong> HTML stores the name, JavaScript reads the name, and CSS styles whichever tab has <code>is-active</code>.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="11"> I understand how a data attribute connects a button to JavaScript.</label>
+      </section>
+
+      <section class="lesson" id="projects" data-lesson="12">
+        <div class="lesson-heading">
+          <span class="lesson-number">12</span>
+          <div>
+            <p class="eyebrow">Portfolio section six</p>
+            <h2>Present a featured project with text, tags, and images</h2>
+          </div>
+        </div>
+
+        <p>The Tycoon’s Gambit section combines a project explanation with visual evidence. The layout is a two-column grid: one side explains the work, and the other side displays image crops.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Project image pattern</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;figure class="game-screen primary-screen"&gt;
+  &lt;img
+    src="assets/game/tycoon-intro.png"
+    alt="The Tycoon's Gambit intro screenshot"&gt;
+  &lt;figcaption&gt;Intro scene and brand atmosphere&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+
+        <p><code>&lt;figure&gt;</code> groups visual media with its explanation. <code>&lt;figcaption&gt;</code> describes what the visitor should notice. The <code>alt</code> text serves people who cannot see the image, while the caption is visible to everyone.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Project layout CSS</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>.game-layout {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.game-showcase {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 16px;
+}</code></pre>
+        </div>
+
+        <p><code>fr</code> means a fraction of the available space. The image side receives more space than the copy side, and the main project image receives more space than its supporting crops.</p>
+        <label class="lesson-check"><input type="checkbox" data-progress="12"> I understand figures, captions, alternative text, and fractional grid columns.</label>
+      </section>
+
+      <section class="lesson" id="films" data-lesson="13">
+        <div class="lesson-heading">
+          <span class="lesson-number">13</span>
+          <div>
+            <p class="eyebrow">Portfolio section seven</p>
+            <h2>Build film cards and open videos in a modal</h2>
+          </div>
+        </div>
+
+        <p>A modal is a temporary layer displayed over the page. Each Play Film button stores a YouTube video ID. JavaScript uses that ID to create the embed address.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Film button</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;button
+  type="button"
+  class="play-button"
+  data-video="dBq8hv2UvcI"&gt;
+  Play Film
+&lt;/button&gt;</code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Open and close functions</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>function openVideo(videoId) {
+  videoFrame.src =
+    `https://www.youtube.com/embed/${videoId}?autoplay=1&amp;rel=0`;
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeVideo() {
+  videoFrame.src = "";
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}</code></pre>
+        </div>
+
+        <div class="breakdown">
+          <div><code>${videoId}</code><p>Inserts the selected video ID inside a template string.</p></div>
+          <div><code>classList.add</code><p>Adds a class that changes the modal from hidden to visible.</p></div>
+          <div><code>aria-hidden</code><p>Communicates visibility to assistive technology.</p></div>
+          <div><code>body.style.overflow</code><p>Stops the page behind the modal from scrolling.</p></div>
+          <div><code>videoFrame.src = ""</code><p>Stops the video when the modal closes.</p></div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Keyboard accessibility</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>window.addEventListener("keydown", (event) =&gt; {
+  if (event.key === "Escape") {
+    closeVideo();
+  }
+});</code></pre>
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="13"> I understand how a video ID, button, modal, and close function work together.</label>
+      </section>
+
+      <section class="lesson" id="education" data-lesson="14">
+        <div class="lesson-heading">
+          <span class="lesson-number">14</span>
+          <div>
+            <p class="eyebrow">Portfolio sections eight and nine</p>
+            <h2>Build education, contact, and footer content</h2>
+          </div>
+        </div>
+
+        <p>The education grid uses repeated articles, just like the experience timeline. The contact section ends the page with a direct hiring message and clear actions.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>One education card</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;article&gt;
+  &lt;span&gt;Expected May 2027&lt;/span&gt;
+  &lt;h3&gt;M.S. Computer Science&lt;/h3&gt;
+  &lt;p&gt;
+    University of New Orleans.
+    Focused on AI, infrastructure, and database systems.
+  &lt;/p&gt;
+&lt;/article&gt;</code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Contact actions</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>&lt;a class="primary-button"
+   href="mailto:kieronhaynes8@gmail.com"&gt;
+  Email Kieron
+&lt;/a&gt;
+
+&lt;a class="secondary-button"
+   href="https://github.com/kieronhaynes38-king"
+   target="_blank"
+   rel="noreferrer"&gt;
+  GitHub
+&lt;/a&gt;</code></pre>
+        </div>
+
+        <p><code>mailto:</code> asks the visitor’s device to open an email application. <code>target="_blank"</code> opens an external site in a new tab. <code>rel="noreferrer"</code> is a security and privacy companion for new-tab links.</p>
+
+        <h3>What a strong contact section should contain</h3>
+        <ul class="check-list">
+          <li>A specific statement about the roles you want</li>
+          <li>Your location or remote-work preference</li>
+          <li>An email action</li>
+          <li>A GitHub or project action</li>
+          <li>A résumé action</li>
+        </ul>
+        <label class="lesson-check"><input type="checkbox" data-progress="14"> I understand repeated education cards and the purpose of each contact link.</label>
+      </section>
+
+      <section class="lesson" id="canvas" data-lesson="15">
+        <div class="lesson-heading">
+          <span class="lesson-number">15</span>
+          <div>
+            <p class="eyebrow">Advanced feature, explained simply</p>
+            <h2>Understand the animated signal canvas</h2>
+          </div>
+        </div>
+
+        <p>The faint moving network behind the page is drawn on an HTML <code>&lt;canvas&gt;</code>. A canvas is a blank drawing surface. JavaScript draws small nodes and connecting lines many times per second.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Canvas setup</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>const canvas = document.querySelector("#signalCanvas");
+const ctx = canvas.getContext("2d");
+let nodes = [];
+
+function drawSignal() {
+  ctx.clearRect(0, 0, width, height);
+
+  nodes.forEach((node) =&gt; {
+    node.x += node.vx;
+    node.y += node.vy;
+    ctx.fillRect(node.x, node.y, 2, 2);
+  });
+
+  window.requestAnimationFrame(drawSignal);
+}</code></pre>
+        </div>
+
+        <ol class="step-list">
+          <li>Select the canvas and request its two-dimensional drawing tools.</li>
+          <li>Store many node objects containing positions and movement speeds.</li>
+          <li>Clear the previous frame.</li>
+          <li>Move each node a small amount.</li>
+          <li>Draw each node in its new position.</li>
+          <li>Ask the browser to draw the next frame.</li>
+        </ol>
+
+        <p>The full code also calculates the distance between nodes. If two nodes are close enough, it draws a line between them.</p>
+
+        <div class="warning"><strong>Beginner advice:</strong> You do not need to rebuild this effect first. Learn the page structure and simple click events before studying animation loops and coordinate math.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="15"> I understand the overall animation loop even if I cannot recreate the math yet.</label>
+      </section>
+
+      <section class="lesson" id="responsive" data-lesson="16">
+        <div class="lesson-heading">
+          <span class="lesson-number">16</span>
+          <div>
+            <p class="eyebrow">Make it work for everyone</p>
+            <h2>Responsive design and accessibility</h2>
+          </div>
+        </div>
+
+        <p>Responsive design means the same site adapts to wide monitors, laptops, tablets, and phones. A media query activates CSS only when a condition is true.</p>
+
+        <div class="code-block">
+          <div class="code-label"><span>Phone layout</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>@media (max-width: 620px) {
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  .skills-grid,
+  .film-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+        </div>
+
+        <p>When the browser is 620 pixels wide or less, the name becomes smaller and multi-column grids become one column.</p>
+
+        <h3>Accessibility decisions already used in the portfolio</h3>
+        <div class="reference-table" role="region" aria-label="Accessibility decisions" tabindex="0">
+          <table>
+            <thead><tr><th>Practice</th><th>Why it helps</th></tr></thead>
+            <tbody>
+              <tr><td>Semantic elements</td><td>Screen readers understand the page structure.</td></tr>
+              <tr><td>Heading order</td><td>Visitors can navigate the information hierarchy.</td></tr>
+              <tr><td>Image <code>alt</code> text</td><td>Images remain meaningful without vision or when loading fails.</td></tr>
+              <tr><td>Visible focus styles</td><td>Keyboard users can see which control is selected.</td></tr>
+              <tr><td>Escape closes the modal</td><td>The film player is easier to dismiss without a mouse.</td></tr>
+              <tr><td><code>prefers-reduced-motion</code></td><td>The background animation stops for people who reduce motion.</td></tr>
+              <tr><td>Strong color contrast</td><td>Text remains readable for more visitors.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Respect reduced motion</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  #signalCanvas {
+    display: none;
+  }
+}</code></pre>
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="16"> I understand media queries and at least three accessibility practices.</label>
+      </section>
+
+      <section class="lesson" id="assets" data-lesson="17">
+        <div class="lesson-heading">
+          <span class="lesson-number">17</span>
+          <div>
+            <p class="eyebrow">Content management</p>
+            <h2>Safely update images, links, and the résumé</h2>
+          </div>
+        </div>
+
+        <p>A relative path tells the browser where a file lives compared with the current page.</p>
+
+        <div class="path-examples">
+          <div><code>styles.css</code><span>Same folder as the HTML page</span></div>
+          <div><code>assets/game/tycoon-intro.png</code><span>Enter assets, then game, then find the image</span></div>
+          <div><code>assets/resume/Kieron-Christopher-Haynes-Resume-Updated.pdf</code><span>Enter assets, then resume, then find the PDF</span></div>
+          <div><code>#experience</code><span>Jump to an ID on the current page</span></div>
+          <div><code>https://github.com/...</code><span>Absolute link to another website</span></div>
+        </div>
+
+        <h3>Résumé update checklist</h3>
+        <ol class="step-list">
+          <li>Export the résumé as a PDF so the layout stays consistent.</li>
+          <li>Use a clear filename without spaces when possible.</li>
+          <li>Place it inside <code>assets/resume/</code>.</li>
+          <li>Search the entire project for the old résumé filename.</li>
+          <li>Replace every old link with the new path.</li>
+          <li>Open each résumé button and confirm the PDF loads.</li>
+        </ol>
+
+        <div class="warning"><strong>Common mistake:</strong> Uploading a new file does not automatically update old links. The HTML must point to the exact new filename.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="17"> I can explain a relative path and the résumé replacement process.</label>
+      </section>
+
+      <section class="lesson" id="publishing" data-lesson="18">
+        <div class="lesson-heading">
+          <span class="lesson-number">18</span>
+          <div>
+            <p class="eyebrow">Put the site online</p>
+            <h2>Git, GitHub, and GitHub Pages</h2>
+          </div>
+        </div>
+
+        <p><strong>Git</strong> tracks versions of your files. <strong>GitHub</strong> stores the project online. <strong>GitHub Pages</strong> turns selected repository files into a public website.</p>
+
+        <div class="flow-diagram compact-flow" aria-label="Publishing workflow">
+          <div><strong>Edit</strong><span>Change local files</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>Check</strong><span>Open and test the site</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>Commit</strong><span>Save a named version</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>Push</strong><span>Send it to GitHub</span></div>
+          <span aria-hidden="true">→</span>
+          <div><strong>Publish</strong><span>Pages serves the update</span></div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label"><span>Typical command sequence</span><button class="copy-button" type="button">Copy</button></div>
+          <pre><code>git status
+git add index.html styles.css script.js
+git commit -m "Update portfolio experience"
+git push</code></pre>
+        </div>
+
+        <div class="breakdown">
+          <div><code>git status</code><p>Shows changed, added, and untracked files.</p></div>
+          <div><code>git add</code><p>Selects the files for the next saved version.</p></div>
+          <div><code>git commit -m</code><p>Creates the saved version with a short description.</p></div>
+          <div><code>git push</code><p>Sends the saved version to the online repository.</p></div>
+        </div>
+
+        <p>Your portfolio is published from the <code>gh-pages</code> branch. GitHub Pages can take a few minutes to refresh, and its public cache may briefly show the previous version.</p>
+
+        <div class="warning"><strong>Safety habit:</strong> Always run <code>git status</code> and review your changes before committing. This helps prevent private or unrelated files from being published.</div>
+        <label class="lesson-check"><input type="checkbox" data-progress="18"> I understand the edit, check, commit, push, and publish sequence.</label>
+      </section>
+
+      <section class="lesson" id="debugging" data-lesson="19">
+        <div class="lesson-heading">
+          <span class="lesson-number">19</span>
+          <div>
+            <p class="eyebrow">When something goes wrong</p>
+            <h2>Debugging, practice projects, and your next learning steps</h2>
+          </div>
+        </div>
+
+        <h3>A calm debugging process</h3>
+        <ol class="step-list">
+          <li><strong>Describe the problem precisely.</strong> “The résumé button opens a 404 page” is more useful than “the site is broken.”</li>
+          <li><strong>Identify the responsible layer.</strong> Missing content is often HTML; bad spacing is CSS; a dead button is often JavaScript.</li>
+          <li><strong>Check the browser console.</strong> Open developer tools and look for red error messages.</li>
+          <li><strong>Check spelling and capitalization.</strong> Most beginner bugs are small name mismatches.</li>
+          <li><strong>Undo to the last working version.</strong> Test after one small change instead of changing ten things at once.</li>
+          <li><strong>Search the project.</strong> Find every use of a filename, class, ID, or job title before replacing it.</li>
+        </ol>
+
+        <div class="reference-table" role="region" aria-label="Troubleshooting guide" tabindex="0">
+          <table>
+            <thead><tr><th>Problem</th><th>Likely cause</th><th>First check</th></tr></thead>
+            <tbody>
+              <tr><td>CSS does not apply</td><td>Wrong class or stylesheet path</td><td>Compare the HTML class and CSS selector character by character</td></tr>
+              <tr><td>Image does not load</td><td>Wrong path or filename case</td><td>Open the asset folder and confirm the exact filename</td></tr>
+              <tr><td>Link does nothing</td><td>Missing target ID or wrong URL</td><td>Compare <code>href="#name"</code> with <code>id="name"</code></td></tr>
+              <tr><td>JavaScript stops</td><td>Console error or missing element</td><td>Read the first red console error and its line number</td></tr>
+              <tr><td>Mobile layout overflows</td><td>Fixed width or large content</td><td>Look for width values that cannot shrink</td></tr>
+              <tr><td>Published site looks old</td><td>Pages build or browser cache delay</td><td>Wait a few minutes and refresh without cache</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Your four-week beginner roadmap</h3>
+        <div class="roadmap">
+          <article><span>Week 1</span><h4>HTML confidence</h4><p>Rebuild the header, hero, profile, and one experience card in a blank practice file.</p></article>
+          <article><span>Week 2</span><h4>CSS confidence</h4><p>Practice color variables, the box model, Flexbox, Grid, buttons, and a phone media query.</p></article>
+          <article><span>Week 3</span><h4>JavaScript confidence</h4><p>Create one click counter, one tab switcher, and one open/close modal.</p></article>
+          <article><span>Week 4</span><h4>Ship an update</h4><p>Add a small project card, test on phone and desktop, commit it, and publish it.</p></article>
+        </div>
+
+        <h3>Practice challenges in the right order</h3>
+        <ol class="challenge-list">
+          <li><span>Easy</span> Change one sentence in the profile.</li>
+          <li><span>Easy</span> Add one skill to an existing list.</li>
+          <li><span>Easy</span> Replace one image and update its alternative text.</li>
+          <li><span>Medium</span> Add a new experience or education card.</li>
+          <li><span>Medium</span> Add a new code tab and sample.</li>
+          <li><span>Medium</span> Add a new film card with a valid YouTube ID.</li>
+          <li><span>Advanced</span> Add a filter that shows projects by category.</li>
+          <li><span>Advanced</span> Rebuild a section using data stored in a JavaScript array.</li>
+        </ol>
+
+        <label class="lesson-check"><input type="checkbox" data-progress="19"> I have chosen my first small practice change.</label>
+      </section>
+
+      <section class="lesson glossary" id="glossary" data-lesson="20">
+        <div class="lesson-heading">
+          <span class="lesson-number">20</span>
+          <div>
+            <p class="eyebrow">Keep this nearby</p>
+            <h2>Beginner glossary and final checklist</h2>
+          </div>
+        </div>
+
+        <div class="glossary-grid">
+          <div><dt>Attribute</dt><dd>Extra information inside an HTML opening tag, such as <code>href</code> or <code>class</code>.</dd></div>
+          <div><dt>Browser</dt><dd>The application that reads website files and displays the page.</dd></div>
+          <div><dt>Class</dt><dd>A reusable label that lets CSS or JavaScript find one or more elements.</dd></div>
+          <div><dt>Commit</dt><dd>A named saved version of your project in Git.</dd></div>
+          <div><dt>Console</dt><dd>A developer-tools panel that displays JavaScript messages and errors.</dd></div>
+          <div><dt>DOM</dt><dd>The browser’s JavaScript representation of the HTML page.</dd></div>
+          <div><dt>Element</dt><dd>A complete HTML item, including its tag, content, and closing tag when required.</dd></div>
+          <div><dt>Event</dt><dd>An action such as a click, key press, scroll, or resize.</dd></div>
+          <div><dt>Function</dt><dd>A named or reusable set of programming instructions.</dd></div>
+          <div><dt>GitHub Pages</dt><dd>GitHub’s static website hosting service.</dd></div>
+          <div><dt>ID</dt><dd>A unique HTML label used for one element, page anchors, or JavaScript selection.</dd></div>
+          <div><dt>Media query</dt><dd>A condition that activates CSS for a particular screen or user preference.</dd></div>
+          <div><dt>Modal</dt><dd>A temporary interface layer displayed over the main page.</dd></div>
+          <div><dt>Property</dt><dd>The part of a CSS declaration that names what will change.</dd></div>
+          <div><dt>Repository</dt><dd>A Git-tracked project stored on GitHub.</dd></div>
+          <div><dt>Responsive</dt><dd>A layout that adapts to different screen sizes.</dd></div>
+          <div><dt>Selector</dt><dd>The part of a CSS rule that chooses which HTML to style.</dd></div>
+          <div><dt>Semantic HTML</dt><dd>Elements chosen for their meaning, not just their appearance.</dd></div>
+          <div><dt>Value</dt><dd>The chosen setting in a CSS declaration or a piece of data in JavaScript.</dd></div>
+          <div><dt>Variable</dt><dd>A named place for storing data in code.</dd></div>
+        </div>
+
+        <h3>Before publishing any portfolio update</h3>
+        <div class="final-checklist">
+          <label><input type="checkbox"> Content and dates are accurate.</label>
+          <label><input type="checkbox"> Official job titles match the résumé.</label>
+          <label><input type="checkbox"> Every image loads and has useful alternative text.</label>
+          <label><input type="checkbox"> Every link and button works.</label>
+          <label><input type="checkbox"> The résumé link opens the newest PDF.</label>
+          <label><input type="checkbox"> The page works on a narrow phone screen.</label>
+          <label><input type="checkbox"> Keyboard focus is visible and the Escape key closes the modal.</label>
+          <label><input type="checkbox"> No private information or unrelated files are included.</label>
+          <label><input type="checkbox"> Changes were reviewed before committing.</label>
+          <label><input type="checkbox"> The public GitHub Pages URL was checked after publishing.</label>
+        </div>
+
+        <div class="course-finish">
+          <p class="eyebrow">Your next move</p>
+          <h3>Learn by changing one small thing today.</h3>
+          <p>Pick the easiest practice challenge, make the change, refresh the page, and explain to yourself which file controlled the result. That explanation is the beginning of real coding knowledge.</p>
+          <div>
+            <a class="primary-link" href="index.html">Return to the portfolio</a>
+            <a class="secondary-link" href="https://github.com/kieronhaynes38-king/Kieron-s-portfolio" target="_blank" rel="noreferrer">Open the source code</a>
+          </div>
+        </div>
+        <label class="lesson-check"><input type="checkbox" data-progress="20"> I completed the guide and I am ready to practice.</label>
+      </section>
+    </main>
+  </div>
+
+  <footer class="guide-footer">
+    <span>Kieron Christopher Haynes</span>
+    <span>Portfolio Code Guide · HTML · CSS · JavaScript · GitHub Pages</span>
+  </footer>
+
+  <script src="portfolio-guide.js"></script>
+</body>
+</html>
