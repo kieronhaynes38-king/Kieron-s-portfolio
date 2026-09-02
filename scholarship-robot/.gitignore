@@ -1,7 +1,0 @@
-.env
-config/private-profile.json
-logs/
-outbox/
-state/application-queue.json
-state/runtime.json
-test-output/
