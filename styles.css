@@ -165,8 +165,9 @@ img { display: block; max-width: 100%; }
 .legacy-layout h1, .contact-page h1 { margin: 24px 0 26px; font-size: clamp(3.5rem, 7vw, 7.8rem); line-height: .84; letter-spacing: -.07em; }
 .legacy-lede { color: var(--navy-800) !important; font-family: var(--serif); font-size: 1.28rem !important; }
 .legacy-layout > div > p { max-width: 620px; color: var(--muted); font-size: .98rem; line-height: 1.7; }
-.legacy-pillars { display: grid; gap: 10px; }
-.legacy-pillars article { padding: 26px 28px; border: 1px solid rgba(201,155,46,.34); background: rgba(255,255,255,.7); }
+.legacy-pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.legacy-pillars article { padding: 22px 24px; border: 1px solid rgba(201,155,46,.34); background: rgba(255,255,255,.7); }
+.legacy-pillars article:last-child { grid-column: 1 / -1; }
 .legacy-pillars h2 { margin: 8px 0; font-family: var(--serif); font-size: 1.65rem; }
 .legacy-pillars p { margin: 0; color: var(--muted); font-size: .87rem; line-height: 1.55; }
 
@@ -226,6 +227,8 @@ img { display: block; max-width: 100%; }
   .experience-summary { font-size: .9rem; }
   .carousel-controls button span { display: none; }
   .project-grid, .education-stack, .contact-grid { grid-template-columns: 1fr; }
+  .legacy-pillars { grid-template-columns: 1fr; }
+  .legacy-pillars article:last-child { grid-column: auto; }
   .contact-layout { padding-right: 0; }
   .contact-grid a { min-height: 126px; }
 }
